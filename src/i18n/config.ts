@@ -11,7 +11,7 @@
 
 import { i18nConfig } from '@constants/site-config';
 
-/** Default locale code (e.g., 'zh') */
+/** Default locale code (e.g., 'vi') */
 export const defaultLocale: string = i18nConfig.defaultLocale;
 
 // All locale entries with resolved defaults

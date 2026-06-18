@@ -1,7 +1,7 @@
 /**
  * English (en) — UI strings
  *
- * Keys not present here will fall back to the default locale (zh).
+ * Keys not present here will fall back to the default locale (vi).
  */
 
 import type { UIStrings } from '../types';

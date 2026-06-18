@@ -46,7 +46,7 @@ const strippedPath = stripLocaleFromPath(Astro.url.pathname);
       loading="eager"
       fetchpriority="high"
     />
-    {christmasConfig.enabled && christmasConfig.features.christmasHat && <ChristmasHat />}
+    {christmasConfig?.enabled && christmasConfig?.features?.christmasHat && <ChristmasHat />}
   </div>
 
   <p class="mt-2">{siteConfig?.name}</p>

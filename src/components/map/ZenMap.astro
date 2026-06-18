@@ -1,0 +1,288 @@
+---
+/**
+ * ZenMap.astro - Bản đồ Truyền Đăng Thiền Tông tương tác
+ * Đã cấu trúc lại để nạp động dữ liệu từ file JSON bên ngoài.
+ */
+
+import patriarchData from '@/constants/json/patriarchData.json';
+
+interface Props {
+  // Tiền tố đường dẫn dẫn tới trang chi tiết các Tổ (ví dụ: '/posts/' hoặc '/lineage/')
+  pathPrefix?: string;
+  // Độ cao mặc định của bản đồ
+  height?: string;
+}
+
+const { pathPrefix = '/lineage/', height = '550px' } = Astro.props;
+---
+
+<!-- Tải CSS của Leaflet trực tiếp để đảm bảo hiển thị đúng giao diện bản đồ -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<!-- FontAwesome Icons phục vụ các biểu tượng phong thủy / Zen -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style define:vars={{ mapHeight: height }}>
+    #map-container {
+        height: var(--mapHeight);
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #0c0f12 !important;
+    }
+
+    .leaflet-container {
+        background-color: #0c0f12 !important;
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Khử viền và chỉnh sửa màu sắc Leaflet sang phong cách tối */
+    .leaflet-bar {
+        border: 1px solid rgba(217, 119, 6, 0.3) !important;
+        box-shadow: none !important;
+    }
+    .leaflet-bar a {
+        background-color: #0f172a !important;
+        color: #d97706 !important;
+        border-bottom: 1px solid rgba(217, 119, 6, 0.2) !important;
+        transition: all 0.2s;
+    }
+    .leaflet-bar a:hover {
+        background-color: #d97706 !important;
+        color: #0f172a !important;
+    }
+    .leaflet-control-attribution {
+        background: rgba(15, 23, 42, 0.8) !important;
+        color: #475569 !important;
+    }
+    .leaflet-control-attribution a {
+        color: #94a3b8 !important;
+    }
+
+    /* Tạo kiểu găm (Marker Pin) dạng sóng âm tỏa hào quang hoàng kim */
+    .zen-marker-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .ping-point {
+        position: relative;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid #0f172a;
+        box-shadow: 0 0 10px rgba(217, 119, 6, 0.8);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .ping-point.gold {
+        background-color: #d97706;
+    }
+    .ping-point.red {
+        background-color: #ef4444;
+        box-shadow: 0 0 12px rgba(239, 68, 68, 0.9);
+    }
+    .ping-point:hover {
+        transform: scale(1.3);
+    }
+    .ping-point::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: ripple 2.2s infinite ease-out;
+        opacity: 0;
+    }
+    .ping-point.gold::after {
+        border: 2px solid #d97706;
+    }
+    .ping-point.red::after {
+        border: 2px solid #ef4444;
+    }
+    @keyframes ripple {
+        0% {
+            width: 12px;
+            height: 12px;
+            opacity: 0.9;
+        }
+        100% {
+            width: 45px;
+            height: 45px;
+            opacity: 0;
+        }
+    }
+</style>
+
+<div class="w-full text-slate-300">
+    <!-- Bộ lọc chuyển đổi nhanh -->
+    <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <button id="tab-all" class="map-tab active px-4 py-2 rounded-full text-xs font-medium bg-amber-600/20 text-amber-400 border border-amber-600/30 transition-all hover:bg-amber-600/30">
+            Toàn Cảnh (Tây Thiên & Đông Độ)
+        </button>
+        <button id="tab-india" class="map-tab px-4 py-2 rounded-full text-xs font-medium bg-slate-800 text-slate-400 border border-slate-700 transition-all hover:bg-slate-700 hover:text-slate-200">
+            Ấn Độ (Tây Thiên)
+        </button>
+        <button id="tab-china" class="map-tab px-4 py-2 rounded-full text-xs font-medium bg-slate-800 text-slate-400 border border-slate-700 transition-all hover:bg-slate-700 hover:text-slate-200">
+            Trung Hoa (Đông Độ)
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
+        <!-- Khu vực hiển thị bản đồ thật -->
+        <div class="lg:col-span-2 bg-slate-950/40 p-1.5 rounded-xl border border-slate-800/85">
+            <div id="map-container"></div>
+        </div>
+
+        <!-- Khu vực Sidebar thông tin chi tiết -->
+        <div class="flex flex-col justify-between bg-slate-950/80 border border-slate-800 rounded-xl p-5 shadow-lg relative min-h-[350px]">
+            <div id="welcome-message" class="flex-1 flex flex-col items-center justify-center text-center p-4">
+                <i class="fa-solid fa-seedling text-amber-600/40 text-4xl mb-3 animate-pulse"></i>
+                <h4 class="font-serif text-amber-200/80 text-lg font-medium">Chọn một Điểm Ngộ Đạo</h4>
+                <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                    Hãy nhấp hoặc di chuột vào các điểm phát quang trên bản đồ địa lý thực tế để chiêm bái dấu chân hành hóa và cơ duyên ngộ đạo của Tổ sư.
+                </p>
+            </div>
+
+            <div id="patriarch-card" class="hidden flex-1 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4 id="card-name" class="font-serif text-xl text-amber-400 font-bold">Tên Vị Tổ</h4>
+                            <span id="card-title" class="text-xs text-amber-500/80 font-medium block mt-0.5">Danh vị / Đời thứ</span>
+                        </div>
+                        <!-- Nút điều hướng đến bài viết truyền thừa chi tiết trong Epoche -->
+                        <a id="card-nav-link" href="#" class="h-10 w-10 rounded-full bg-amber-500/10 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center text-amber-400 transition-all shadow-md" title="Xem chi tiết truyền thừa">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </a>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="border-t border-slate-800/80 pt-3">
+              <span class="text-[10px] uppercase tracking-wider text-slate-500 block mb-1">
+                <i class="fa-solid fa-map-pin mr-1 text-amber-600"></i>Vị trí thực địa ngày nay
+              </span>
+                            <span id="card-location" class="text-xs text-slate-300 font-semibold">Tên vùng đất cổ và hiện đại</span>
+                        </div>
+
+                        <div class="border-t border-slate-800/80 pt-3">
+              <span class="text-[10px] uppercase tracking-wider text-slate-500 block mb-1">
+                <i class="fa-solid fa-scroll mr-1 text-amber-600"></i>Hành trạng truyền pháp
+              </span>
+                            <p id="card-desc" class="text-xs text-slate-400 leading-relaxed">
+                                Chi tiết hành trình hoặc tích truyện ngộ đạo...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-3 border-t border-slate-900 flex justify-between items-center text-[10px] text-slate-500">
+                    <span>* Tọa độ thực tế lịch sử</span>
+                    <span class="text-amber-500/60 font-medium">Nhấp nút mũi tên để xem bài viết</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Nạp thư viện Leaflet trực tiếp trên Client -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<script is:inline define:vars={{ pathPrefix, patriarchData }}>
+    const centerView = [24.0, 96.0];
+    const defaultZoom = 4;
+
+    // Khởi tạo bản đồ sau khi toàn bộ script Leaflet đã tải xong trên trình duyệt
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof L === 'undefined') return;
+
+        const map = L.map('map-container', {
+            zoomControl: true,
+            scrollWheelZoom: false
+        }).setView(centerView, defaultZoom);
+
+        // Sử dụng lớp bản đồ nền CartoDB Dark Matter sang trọng phù hợp tông màu của Epoche
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            maxZoom: 18,
+            minZoom: 3
+        }).addTo(map);
+
+        const markers = {};
+
+        // Thiết lập các điểm mốc tỏa sáng bằng việc lặp qua mảng dữ liệu nạp động từ file JSON
+        patriarchData.forEach(p => {
+            const customIcon = L.divIcon({
+                className: 'zen-marker-icon',
+                html: `<div class="ping-point ${p.color}" id="pin-${p.id}"></div>`,
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+
+            const marker = L.marker(p.coords, { icon: customIcon }).addTo(map);
+            markers[p.id] = marker;
+
+            marker.on('click mouseover', () => {
+                showPatriarchDetail(p);
+            });
+        });
+
+        function showPatriarchDetail(p) {
+            const welcome = document.getElementById('welcome-message');
+            const card = document.getElementById('patriarch-card');
+
+            document.getElementById('card-name').innerText = p.name;
+            document.getElementById('card-title').innerText = p.title;
+            document.getElementById('card-location').innerText = p.location;
+            document.getElementById('card-desc').innerText = p.desc;
+
+            // Ghép nối linh hoạt đường dẫn của Astro đến file chi tiết
+            document.getElementById('card-nav-link').setAttribute('href', `${pathPrefix}${p.slug}`);
+
+            welcome.classList.add('hidden');
+            card.classList.remove('hidden');
+
+            document.querySelectorAll('.ping-point').forEach(pin => {
+                pin.classList.remove('scale-150', 'border-amber-400');
+            });
+            const activePin = document.getElementById(`pin-${p.id}`);
+            if (activePin) {
+                activePin.classList.add('scale-150', 'border-amber-400');
+            }
+        }
+
+        // Thiết lập các sự kiện tương tác cho các nút Tab
+        const zoomToRegion = (region) => {
+            document.querySelectorAll('.map-tab').forEach(btn => {
+                btn.classList.remove('bg-amber-600/20', 'text-amber-400', 'border-amber-600/30', 'active');
+                btn.classList.add('bg-slate-800', 'text-slate-400', 'border-slate-700');
+            });
+
+            const activeBtn = document.getElementById(`tab-${region}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-amber-600/20', 'text-amber-400', 'border-amber-600/30', 'active');
+                activeBtn.classList.remove('bg-slate-800', 'text-slate-400', 'border-slate-700');
+            }
+
+            if (region === 'india') {
+                map.flyTo([19.5, 79.5], 5, { duration: 1.5 });
+            } else if (region === 'china') {
+                map.flyTo([30.0, 114.5], 5, { duration: 1.5 });
+            } else {
+                map.flyTo(centerView, defaultZoom, { duration: 1.5 });
+            }
+        };
+
+        document.getElementById('tab-all')?.addEventListener('click', () => zoomToRegion('all'));
+        document.getElementById('tab-india')?.addEventListener('click', () => zoomToRegion('india'));
+        document.getElementById('tab-china')?.addEventListener('click', () => zoomToRegion('china'));
+
+        // Đảm bảo bản đồ render hoàn chỉnh kích thước khi tải
+        setTimeout(() => {
+            map.invalidateSize();
+        }, 400);
+    });
+</script>

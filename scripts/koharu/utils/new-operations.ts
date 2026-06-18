@@ -67,7 +67,7 @@ export async function getCategoryTree(): Promise<CategoryTreeItem[]> {
   const config = await loadSiteConfig();
   const i18nConfig = config.i18n as { defaultLocale?: string; locales?: { code: string }[] } | undefined;
   const localeDirs = new Set(
-    (i18nConfig?.locales ?? []).map((l) => l.code).filter((code) => code !== (i18nConfig?.defaultLocale ?? 'zh')),
+    (i18nConfig?.locales ?? []).map((l) => l.code).filter((code) => code !== (i18nConfig?.defaultLocale ?? 'vi')),
   );
 
   const blogDirs = (await fs.promises.readdir(BLOG_CONTENT_PATH, { withFileTypes: true })).filter(

@@ -58,8 +58,8 @@ const robotsConfig = yamlConfig.seo?.robots;
 
 // i18n configuration from YAML
 const i18nYaml = yamlConfig.i18n;
-const i18nDefaultLocale = i18nYaml?.defaultLocale ?? 'zh';
-const i18nLocales = (i18nYaml?.locales ?? [{ code: 'zh' }]).map((l) => l.code);
+const i18nDefaultLocale = i18nYaml?.defaultLocale ?? 'vi';
+const i18nLocales = (i18nYaml?.locales ?? [{ code: 'vi' }]).map((l) => l.code);
 const hasMultipleLocales = i18nLocales.length > 1;
 
 /**

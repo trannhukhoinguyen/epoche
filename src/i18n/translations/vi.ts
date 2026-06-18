@@ -1,32 +1,32 @@
 /**
  * English (en) — UI strings
  *
- * Keys not present here will fall back to the default locale (zh).
+ * Keys not present here will fall back to the default locale (vi).
  */
 
 import type { UIStrings } from '../types';
 
 export const uiStrings: UIStrings = {
   // ── Navigation ──────────────────────────────────────────────
-  'nav.home': 'Home',
-  'nav.posts': 'Posts',
-  'nav.categories': 'Categories',
+  'nav.home': 'Trang chủ',
+  'nav.posts': 'Bài viết',
+  'nav.categories': 'Danh mục',
   'nav.tags': 'Tags',
-  'nav.archives': 'Archives',
-  'nav.friends': 'Friends',
-  'nav.about': 'About',
-  'nav.music': 'Music',
-  'nav.weekly': 'Weekly',
-  'nav.bangumi': 'Bangumi',
+  'nav.archives': 'Lưu trữ',
+  'nav.friends': 'Bạn bè',
+  'nav.about': 'Tiểu sử',
+  'nav.music': 'Âm thanh',
+  'nav.weekly': 'Hàng tuần',
+  'nav.bangumi': 'Tiến trình',
 
   // ── Common ──────────────────────────────────────────────────
-  'common.search': 'Search',
-  'common.close': 'Close',
-  'common.copy': 'Copy',
-  'common.copied': 'Copied',
+  'common.search': 'Tìm kiếm',
+  'common.close': 'Đóng',
+  'common.copy': 'Sao chép',
+  'common.copied': 'Đã sao chép',
   'common.loading': 'Loading...',
-  'common.noResults': 'No results found',
-  'common.backToTop': 'Back to top',
+  'common.noResults': 'Không tìm thấy kết quả nào',
+  'common.backToTop': 'Lên đầu trang',
   'common.darkMode': 'Dark mode',
   'common.lightMode': 'Light mode',
   'common.toggleTheme': 'Toggle theme',

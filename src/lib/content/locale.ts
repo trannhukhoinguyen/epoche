@@ -26,7 +26,7 @@ export interface SlugLocaleInfo {
  * so posts in disabled locale directories are correctly excluded by filterPostsByLocale.
  *
  * @example
- * getSlugLocaleInfo('tools/getting-started')     // { locale: 'zh', localeFreeSlug: 'tools/getting-started' }
+ * getSlugLocaleInfo('tools/getting-started')     // { locale: 'vi', localeFreeSlug: 'tools/getting-started' }
  * getSlugLocaleInfo('en/tools/getting-started')   // { locale: 'en', localeFreeSlug: 'tools/getting-started' }
  */
 export function getSlugLocaleInfo(slug: string): SlugLocaleInfo {

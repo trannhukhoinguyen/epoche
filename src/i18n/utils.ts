@@ -7,7 +7,7 @@
 
 import { defaultLocale, isLocaleSupported } from './config';
 import { translations } from './translations';
-import { uiStrings as defaultStrings } from './translations/zh';
+import { uiStrings as defaultStrings } from './translations/vi';
 import type { Locale, TranslationKey, TranslationParams } from './types';
 
 /** Replace `{param}` placeholders in a string with provided values. */
@@ -73,7 +73,7 @@ function tryTranslate(locale: Locale, key: string, params?: TranslationParams): 
  * Strategy: check if the first path segment is a supported locale code.
  * If not (or for default locale URLs without prefix), return defaultLocale.
  *
- * Note: URLs with the default locale prefix (e.g., '/zh/post/hello') are treated
+ * Note: URLs with the default locale prefix (e.g., '/vi/post/hello') are treated
  * as defaultLocale — the prefix is ignored. This works with Astro's
  * `redirectToDefaultLocale: true` which redirects `/zh/` → `/`. No static pages
  * are generated for the default locale prefix, so such URLs would 404 anyway.
@@ -106,7 +106,8 @@ export function getLocaleFromUrl(pathname: string): Locale {
  *
  * @example
  * ```ts
- * localizedPath('/post/hello', 'zh')  // => '/post/hello'
+ * localizedPath('/post/hello', 'vi')  // => '/post/hello'
+ * localizedPath('/post/hello', 'zh')  // => '/zh/post/hello'
  * localizedPath('/post/hello', 'en')  // => '/en/post/hello'
  * localizedPath('/', 'en')            // => '/en'
  * ```
@@ -150,7 +151,7 @@ export function stripLocaleFromPath(pathname: string): string {
  *
  * @example
  * ```ts
- * getAlternateUrl('/en/post/hello', 'zh')  // => '/post/hello'
+ * getAlternateUrl('/en/post/hello', 'vi')  // => '/post/hello'
  * getAlternateUrl('/post/hello', 'en')     // => '/en/post/hello'
  * ```
  */
@@ -167,6 +168,7 @@ export function getAlternateUrl(currentPathname: string, targetLocale: Locale): 
  *
  * @example
  * ```ts
+ * getHtmlLang('vi')  // => 'vi-VI'
  * getHtmlLang('zh')  // => 'zh-CN'
  * getHtmlLang('en')  // => 'en'
  * getHtmlLang('ja')  // => 'ja'

@@ -342,8 +342,8 @@ export const devConfig: DevConfig = {
 // =============================================================================
 
 export const i18nConfig: I18nConfig = yamlConfig.i18n ?? {
-  defaultLocale: 'zh',
-  locales: [{ code: 'zh', label: '中文' }],
+  defaultLocale: 'vi',
+  locales: [{ code: 'vi', label: 'Vietnamese' }],
 };
 
 // =============================================================================

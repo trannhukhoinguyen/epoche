@@ -1,6 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { parseDateInSiteTimezone, reinterpretUtcAsTimezone } from '@lib/date';
 import type { BlogSchema, BlogSchemaInput } from 'types/blog';
+import type { MasterSchema, MasterSchemaInput } from 'types/master';
 
 /**
  * Custom date schema that parses date strings in the site's configured timezone.
@@ -55,6 +56,38 @@ const blogCollection = defineCollection({
   }) satisfies z.ZodType<BlogSchema, z.ZodTypeDef, BlogSchemaInput>,
 });
 
+const masterCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    link: z.string().optional(),
+    date: dateInSiteTimezone,
+    updated: dateInSiteTimezone.optional(),
+    cover: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    // 兼容老 Hexo 博客
+    subtitle: z.string().optional(),
+    catalog: z.boolean().optional().default(true),
+    categories: z
+      .array(z.string())
+      .or(z.array(z.array(z.string())))
+      .optional(),
+    sticky: z.boolean().optional(),
+    draft: z.boolean().optional(),
+    // 目录编号控制
+    tocNumbering: z.boolean().optional().default(true),
+    // 排除 AI 摘要生成
+    excludeFromSummary: z.boolean().optional(),
+    // Shoka features per-post toggle
+    math: z.boolean().optional(),
+    quiz: z.boolean().optional(),
+    password: z.string().optional(),
+    /** Keywords for SEO */
+    keywords: z.array(z.string()).optional(),
+  }) satisfies z.ZodType<MasterSchema, z.ZodTypeDef, MasterSchemaInput>,
+});
+
 export const collections = {
   blog: blogCollection,
+  master: masterCollection,
 };

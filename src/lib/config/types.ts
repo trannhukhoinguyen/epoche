@@ -119,6 +119,32 @@ export interface FriendsConfig {
 }
 
 // =============================================================================
+// Masters Configuration
+// =============================================================================
+
+export interface MasterLink {
+  site: string;
+  url: string;
+  owner: string;
+  desc: string;
+  image: string;
+  color?: string;
+}
+
+export interface MastersIntro {
+  title: string;
+  subtitle?: string;
+  applyTitle?: string;
+  applyDesc?: string;
+  exampleYaml?: string;
+}
+
+export interface MastersConfig {
+  intro: MastersIntro;
+  data: MasterLink[];
+}
+
+// =============================================================================
 // Announcements
 // =============================================================================
 
@@ -261,7 +287,7 @@ export interface WalineConfig {
   /**
    * 显示语言
    * Display language
-   * @default 'zh-CN'
+   * @default 'vi-VI'
    */
   lang?: string;
 
@@ -566,7 +592,7 @@ export interface BangumiConfig {
 // =============================================================================
 
 export interface LocaleConfig {
-  /** Locale code (BCP 47 short format, e.g., 'zh', 'en', 'ja') */
+  /** Locale code (BCP 47 short format, e.g., 'vi', 'zh', 'en', 'ja') */
   code: string;
   /** Display label for the locale (e.g., '中文', 'English') */
   label?: string;
@@ -592,6 +618,7 @@ export interface SiteYamlConfig {
   featuredSeries?: FeaturedSeriesItem[] | FeaturedSeriesItem;
   social?: SocialConfig;
   friends?: FriendsConfig;
+  masters?: MastersConfig;
   announcements?: AnnouncementConfig[];
   defaultCoverList?: string[];
   content?: ContentConfig;

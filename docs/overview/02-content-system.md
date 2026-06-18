@@ -126,7 +126,7 @@ if (Array.isArray(firstCategory)) {
 
 ### 分类映射 `_config.yml`
 
-由于 URL 中不能直接使用中文，项目使用映射表将中文分类名转换为英文 slug：
+由于 URL 中不能直接使用，项目使用映射表将类名转换为英文 slug：
 
 ```yaml
 # _config.yml
@@ -159,7 +159,7 @@ export const categoryMap: Record<string, string> = {
 ```typescript
 // src/lib/content/types.ts
 type Category = {
-  name: string;           // 分类名（中文）
+  name: string;           // 分类名
   children?: Category[];  // 子分类
 };
 ```
@@ -630,7 +630,7 @@ date: 2024-02-20
 
 1. **Content Collections**：Astro 原生内容管理，提供类型安全和 Schema 验证
 2. **双格式分类**：兼容 Hexo 的单层分类和多层分类格式
-3. **分类映射**：中文分类名 → 英文 slug 的转换机制
+3. **分类映射**：分类名 → 英文 slug 的转换机制
 4. **递归算法**：分类树的构建和遍历
 5. **工具函数分层**：
    - `posts.ts`：文章查询（排序、筛选、分页）
