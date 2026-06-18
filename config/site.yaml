@@ -112,7 +112,7 @@ featuredCategories:
 # =============================================================================
 # 字段说明：
 #   slug: URL 路径（必填），如 'weekly' 对应 /weekly 路径
-#         注意：不能与保留路由冲突，包括：about, categories, tags, masters, friends, posts, archives, api, _astro, rss.xml, sitemap.xml, robots.txt, favicon.ico 等
+#         注意：不能与保留路由冲突，包括：about, categories, tags, ancestors, friends, posts, archives, api, _astro, rss.xml, sitemap.xml, robots.txt, favicon.ico 等
 #   categoryName: 对应的分类名称（必填，需在 categoryMap 中存在）
 #   label: 侧边栏/导航中显示的简短名称（可选）
 #   fullName: 系列页面标题显示的完整名称（可选）
@@ -253,7 +253,7 @@ friends:
       color: '#ABDCFF'
 
 # =============================================================================
-# Master Links
+# Ancestor Links
 # =============================================================================
 # intro: 页面介绍文字配置
 #   title: 页面标题
@@ -269,7 +269,7 @@ friends:
 #   - image: 头像图片 URL
 #   - color: (可选) 卡片背景色，十六进制格式
 # -----------------------------------------------------------------------------
-masters:
+ancestors:
   intro:
     title: 友情链接 # 页面标题
     subtitle: 欢迎交换友链！ # 页面副标题
@@ -461,8 +461,8 @@ navigation:
 #    path: /friends
 #    icon: ri:links-line
   - name: Thiền sư
-    nameKey: nav.masters
-    path: /masters
+    nameKey: nav.ancestors
+    path: /ancestors
     icon: ri:user-voice-fill
   - name: 关于
     nameKey: nav.about

@@ -119,10 +119,10 @@ export interface FriendsConfig {
 }
 
 // =============================================================================
-// Masters Configuration
+// Ancestors Configuration
 // =============================================================================
 
-export interface MasterLink {
+export interface AncestorLink {
   site: string;
   url: string;
   owner: string;
@@ -131,7 +131,7 @@ export interface MasterLink {
   color?: string;
 }
 
-export interface MastersIntro {
+export interface AncestorsIntro {
   title: string;
   subtitle?: string;
   applyTitle?: string;
@@ -139,9 +139,9 @@ export interface MastersIntro {
   exampleYaml?: string;
 }
 
-export interface MastersConfig {
-  intro: MastersIntro;
-  data: MasterLink[];
+export interface AncestorsConfig {
+  intro: AncestorsIntro;
+  data: AncestorLink[];
 }
 
 // =============================================================================
@@ -618,7 +618,7 @@ export interface SiteYamlConfig {
   featuredSeries?: FeaturedSeriesItem[] | FeaturedSeriesItem;
   social?: SocialConfig;
   friends?: FriendsConfig;
-  masters?: MastersConfig;
+  ancestors?: AncestorsConfig;
   announcements?: AnnouncementConfig[];
   defaultCoverList?: string[];
   content?: ContentConfig;

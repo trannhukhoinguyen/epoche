@@ -1,4 +1,4 @@
-import { mastersIntro } from '@constants/masters-config';
+import { ancestorsIntro } from '@constants/ancestors-config';
 import { useTranslation } from '@hooks/useTranslation';
 import { useClipboard } from 'foxact/use-clipboard';
 import { useCallback, useState } from 'react';
@@ -13,7 +13,7 @@ interface FormData {
   color: string;
 }
 
-export default function MasterRequestForm() {
+export default function ancestorRequestForm() {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     site: '',
@@ -27,10 +27,10 @@ export default function MasterRequestForm() {
   const { copied, copy } = useClipboard({ timeout: 2000 });
 
   const generateText = useCallback(() => {
-    return `site: ${formData.site || t('masters.sitePlaceholder')}
+    return `site: ${formData.site || t('ancestors.sitePlaceholder')}
 url: ${formData.url || 'https://example.com'}
-owner: ${formData.owner || t('masters.ownerPlaceholder')}
-desc: ${formData.desc || t('masters.descPlaceholder')}
+owner: ${formData.owner || t('ancestors.ownerPlaceholder')}
+desc: ${formData.desc || t('ancestors.descPlaceholder')}
 image: ${formData.image || 'https://example.com/avatar.jpg'}
 color: "${formData.color || '#ffc0cb'}"`;
   }, [formData, t]);
@@ -64,52 +64,55 @@ color: "${formData.color || '#ffc0cb'}"`;
             <div className="mb-6">
               <h2 className="mb-2 flex items-center gap-2 font-black text-2xl text-gray-800 dark:text-white">
                 <SakuraSVG className="size-6 animate-spin text-[#FFC0CB] duration-10000" />
-                {t('masters.applyTitle')}
+                {t('ancestors.applyTitle')}
               </h2>
-              <p className="font-medium text-gray-500 text-sm dark:text-gray-400">{mastersIntro.applyDesc}</p>
+              <p className="font-medium text-gray-500 text-sm dark:text-gray-400">{ancestorsIntro.applyDesc}</p>
             </div>
 
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="group relative">
-                  <label htmlFor="master-site" className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide">
-                    {t('masters.siteName')}
+                  <label
+                    htmlFor="ancestor-site"
+                    className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide"
+                  >
+                    {t('ancestors.siteName')}
                   </label>
                   <input
-                    id="master-site"
+                    id="ancestor-site"
                     type="text"
                     name="site"
                     value={formData.site}
                     onChange={handleChange}
                     className="w-full rounded-xl border-2 border-gray-100 bg-gray-50/50 px-4 py-2.5 font-bold text-gray-700 text-sm transition-all focus:border-pink-300 focus:bg-white focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-200 dark:focus:border-pink-700 dark:focus:bg-gray-800 dark:focus:ring-pink-900/30"
-                    placeholder={t('masters.sitePlaceholder')}
+                    placeholder={t('ancestors.sitePlaceholder')}
                   />
                 </div>
                 <div className="group relative">
                   <label
-                    htmlFor="master-owner"
+                    htmlFor="ancestor-owner"
                     className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide"
                   >
-                    {t('masters.ownerName')}
+                    {t('ancestors.ownerName')}
                   </label>
                   <input
-                    id="master-owner"
+                    id="ancestor-owner"
                     type="text"
                     name="owner"
                     value={formData.owner}
                     onChange={handleChange}
                     className="w-full rounded-xl border-2 border-gray-100 bg-gray-50/50 px-4 py-2.5 font-bold text-gray-700 text-sm transition-all focus:border-pink-300 focus:bg-white focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-200 dark:focus:border-pink-700 dark:focus:bg-gray-800 dark:focus:ring-pink-900/30"
-                    placeholder={t('masters.ownerPlaceholder')}
+                    placeholder={t('ancestors.ownerPlaceholder')}
                   />
                 </div>
               </div>
 
               <div className="group relative">
-                <label htmlFor="master-url" className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide">
-                  {t('masters.siteUrl')}
+                <label htmlFor="ancestor-url" className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide">
+                  {t('ancestors.siteUrl')}
                 </label>
                 <input
-                  id="master-url"
+                  id="ancestor-url"
                   type="url"
                   name="url"
                   value={formData.url}
@@ -120,30 +123,30 @@ color: "${formData.color || '#ffc0cb'}"`;
               </div>
 
               <div className="group relative">
-                <label htmlFor="master-desc" className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide">
-                  {t('masters.siteDesc')}
+                <label htmlFor="ancestor-desc" className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide">
+                  {t('ancestors.siteDesc')}
                 </label>
                 <textarea
-                  id="master-desc"
+                  id="ancestor-desc"
                   name="desc"
                   value={formData.desc}
                   onChange={handleChange}
                   rows={2}
                   className="w-full resize-none rounded-xl border-2 border-gray-100 bg-gray-50/50 px-4 py-2.5 font-bold text-gray-700 text-sm transition-all focus:border-pink-300 focus:bg-white focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-200 dark:focus:border-pink-700 dark:focus:bg-gray-800 dark:focus:ring-pink-900/30"
-                  placeholder={t('masters.descPlaceholder')}
+                  placeholder={t('ancestors.descPlaceholder')}
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="group relative">
                   <label
-                    htmlFor="master-image"
+                    htmlFor="ancestor-image"
                     className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide"
                   >
-                    {t('masters.avatarUrl')}
+                    {t('ancestors.avatarUrl')}
                   </label>
                   <input
-                    id="master-image"
+                    id="ancestor-image"
                     type="url"
                     name="image"
                     value={formData.image}
@@ -154,15 +157,15 @@ color: "${formData.color || '#ffc0cb'}"`;
                 </div>
                 <div className="group relative">
                   <label
-                    htmlFor="master-color"
+                    htmlFor="ancestor-color"
                     className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide"
                   >
-                    {t('masters.themeColor')}
+                    {t('ancestors.themeColor')}
                   </label>
                   <div className="flex items-center gap-3">
                     <div className="relative h-10 w-10 overflow-hidden rounded-xl border-2 border-gray-100 shadow-sm transition-transform hover:scale-105 dark:border-gray-700">
                       <input
-                        id="master-color"
+                        id="ancestor-color"
                         type="color"
                         name="color"
                         value={formData.color}
@@ -185,14 +188,14 @@ color: "${formData.color || '#ffc0cb'}"`;
           {/* Right Side: Preview / Code */}
           <div className="relative flex flex-col justify-center rounded-xl bg-gray-50 p-6 md:p-3 dark:bg-gray-800/50">
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="font-bold text-xl uppercase tracking-wider">{t('masters.previewTitle')}</h3>
+              <h3 className="font-bold text-xl uppercase tracking-wider">{t('ancestors.previewTitle')}</h3>
               <button
                 type="button"
                 onClick={handleCopy}
                 className="group relative px-3 py-2 font-bold text-base transition-transform hover:-translate-y-1 dark:text-white"
               >
                 <div className="absolute inset-0 rotate-[1deg] rounded-lg border-2 border-foreground border-dashed transition-all group-hover:rotate-0 dark:border-white"></div>
-                {copied ? t('masters.copiedConfig') : t('masters.copyConfig')}
+                {copied ? t('ancestors.copiedConfig') : t('ancestors.copyConfig')}
               </button>
             </div>
 
@@ -203,7 +206,7 @@ color: "${formData.color || '#ffc0cb'}"`;
             </div>
 
             <div className="mt-6 flex items-center gap-3 rounded-xl bg-pink-50 p-4 font-medium text-pink-600 text-xs dark:bg-pink-900/20 dark:text-pink-300">
-              {t('masters.hint')}
+              {t('ancestors.hint')}
             </div>
           </div>
         </div>

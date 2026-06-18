@@ -1,10 +1,10 @@
 import type { CollectionEntry } from 'astro:content';
 
 /**
- * Master post schema - matches the schema defined in content/config.ts
+ * Ancestor post schema - matches the schema defined in content/config.ts
  * This is the OUTPUT type after Zod transforms are applied.
  */
-export interface MasterSchema {
+export interface AncestorSchema {
   title: string;
   description?: string;
   link?: string;
@@ -31,18 +31,18 @@ export interface MasterSchema {
 }
 
 /**
- * Master post schema INPUT type - before Zod transforms.
+ * Ancestor post schema INPUT type - before Zod transforms.
  * gray-matter parses YAML dates as Date objects, so date fields accept both.
  */
-export interface MasterSchemaInput extends Omit<MasterSchema, 'date' | 'updated'> {
+export interface AncestorSchemaInput extends Omit<AncestorSchema, 'date' | 'updated'> {
   date: string | Date;
   updated?: string | Date;
 }
 
 /**
- * Master post type from Astro content collections
+ * Ancestor post type from Astro content collections
  */
-export type MasterPost = CollectionEntry<'master'>;
+export type AncestorPost = CollectionEntry<'ancestor'>;
 
 /**
  * 最小文章引用 - 用于导航（3 字段）

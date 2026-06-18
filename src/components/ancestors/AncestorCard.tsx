@@ -1,5 +1,5 @@
+import type { AncestorLink } from '@constants/ancestors-config';
 import { microDampingPreset } from '@constants/anim/spring';
-import type { MasterLink } from '@constants/masters-config';
 import { useIsMounted } from '@hooks/useIsMounted';
 import { useStore } from '@nanostores/react';
 import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'motion/react';
@@ -7,8 +7,8 @@ import { type MouseEvent, useRef } from 'react';
 import { cn, normalizeHexColor } from '@/lib/utils';
 import { christmasEnabled } from '@/store/christmas';
 
-interface MasterCardProps {
-  master: MasterLink;
+interface AncestorCardProps {
+  ancestor: AncestorLink;
   index: number;
 }
 
@@ -30,7 +30,7 @@ const DEFAULT_AVATAR = `data:image/svg+xml;utf8,${encodeURIComponent(`
 </svg>
 `)}`;
 
-export default function MasterCard({ master, index }: MasterCardProps) {
+export default function AncestorCard({ ancestor, index }: AncestorCardProps) {
   const cardRef = useRef<HTMLAnchorElement>(null);
   const isMounted = useIsMounted();
   const isChristmasEnabled = useStore(christmasEnabled);
@@ -72,16 +72,16 @@ export default function MasterCard({ master, index }: MasterCardProps) {
     y.set(0);
   };
 
-  const cardColor = normalizeHexColor(master.color || DEFAULT_COLOR);
-  const avatarImage = master.image || DEFAULT_AVATAR;
+  const cardColor = normalizeHexColor(ancestor.color || DEFAULT_COLOR);
+  const avatarImage = ancestor.image || DEFAULT_AVATAR;
 
   return (
     <motion.a
-      href={master.url}
+      href={ancestor.url}
       target="_blank"
       ref={cardRef}
       className={cn(
-        'master-card group !no-underline hover:!no-underline relative block h-[200px] w-full cursor-pointer select-none transition-transform duration-300 ease-easeOut',
+        'ancestor-card group !no-underline hover:!no-underline relative block h-[200px] w-full cursor-pointer select-none transition-transform duration-300 ease-easeOut',
         { 'z-5': isMounted && isChristmasEnabled },
       )}
       style={{ perspective: '1000px' }}
@@ -115,7 +115,7 @@ export default function MasterCard({ master, index }: MasterCardProps) {
             <div className="relative h-14 w-14 overflow-hidden rounded-full border-4 border-white bg-white shadow-lg dark:border-gray-800 dark:bg-gray-800">
               <img
                 src={avatarImage}
-                alt={master.owner}
+                alt={ancestor.owner}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
@@ -128,10 +128,10 @@ export default function MasterCard({ master, index }: MasterCardProps) {
               className="truncate font-bold text-gray-900 text-sm transition-colors group-hover:text-(--card-color) dark:text-white"
               style={{ '--card-color': cardColor } as CSSCustomProperties}
             >
-              {master.owner}
+              {ancestor.owner}
             </p>
-            <p className="mb-1 truncate font-medium text-[10px] text-gray-400 uppercase tracking-wider">{master.site}</p>
-            <p className="line-clamp-2 text-[10px] text-gray-600 dark:text-gray-300">{master.desc}</p>
+            <p className="mb-1 truncate font-medium text-[10px] text-gray-400 uppercase tracking-wider">{ancestor.site}</p>
+            <p className="line-clamp-2 text-[10px] text-gray-600 dark:text-gray-300">{ancestor.desc}</p>
           </div>
         </div>
 

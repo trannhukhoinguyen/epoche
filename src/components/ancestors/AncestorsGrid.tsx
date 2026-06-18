@@ -1,22 +1,22 @@
 import { ErrorBoundary, ErrorFallback } from '@components/common';
+import { ancestorsData } from '@constants/ancestors-config';
 import { microDampingPreset } from '@constants/anim/spring';
-import { mastersData } from '@constants/masters-config';
 import { motion } from 'motion/react';
-import MasterCard from './MasterCard';
+import AncestorCard from './AncestorCard';
 
-export default function MastersGrid() {
+export default function AncestorsGrid() {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <div className="w-full">
         {/* Grid Container */}
         <div className="grid grid-cols-3 gap-6 md:grid-cols-2 md:gap-4 xl:grid-cols-4 xl:gap-8">
-          {mastersData.map((master, index) => (
-            <MasterCard key={master.url} master={master} index={index} />
+          {ancestorsData.map((ancestor, index) => (
+            <AncestorCard key={ancestor.url} ancestor={ancestor} index={index} />
           ))}
         </div>
 
         {/* Empty State */}
-        {mastersData.length === 0 && (
+        {ancestorsData.length === 0 && (
           <motion.div
             className="flex min-h-[300px] flex-col items-center justify-center text-center"
             initial={{ opacity: 0, y: 20 }}

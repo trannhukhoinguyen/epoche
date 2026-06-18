@@ -1,7 +1,7 @@
 ---
+import AncestorRequestForm from '@components/ancestors/AncestorRequestForm';
+import AncestorsGrid from '@components/ancestors/AncestorsGrid';
 import HomeSider from '@components/layout/HomeSider.astro';
-import MasterRequestForm from '@components/masters/MasterRequestForm';
-import MastersGrid from '@components/masters/MastersGrid';
 import Cover from '@components/ui/cover/Cover.astro';
 import { CONTENT_PADDING } from '@constants/layout';
 import { siteConfig } from '@constants/site-config';
@@ -11,22 +11,22 @@ import { Comment } from '@/components/comment';
 import { getLocaleFromUrl, t } from '@/i18n';
 
 const locale = getLocaleFromUrl(Astro.url.pathname);
-const title = `${t(locale, 'masters.title')} | ${siteConfig.title}`;
-const description = t(locale, 'masters.title');
+const title = `${t(locale, 'ancestors.title')} | ${siteConfig.title}`;
+const description = t(locale, 'ancestors.title');
 ---
 
 <Layout title={title} description={description}>
   <TwoColumnLayout>
-    <Cover slot="cover" title={t(locale, 'masters.title')} />
+    <Cover slot="cover" title={t(locale, 'ancestors.title')} />
     <HomeSider slot="sider" />
     <div
       class={`bg-gradient-start shadow-box tablet:shadow-none flex flex-col gap-10 overflow-hidden ${CONTENT_PADDING.standard}`}
     >
       <div class="mt-4">
-        <MastersGrid client:load />
+        <AncestorsGrid client:load />
       </div>
 <!--      <div class="mb-4">
-        <MasterRequestForm client:visible />
+        <AncestorRequestForm client:visible />
         <Comment />
       </div>-->
     </div>

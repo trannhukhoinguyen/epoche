@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { parseDateInSiteTimezone, reinterpretUtcAsTimezone } from '@lib/date';
+import type { AncestorSchema, AncestorSchemaInput } from 'types/ancestor';
 import type { BlogSchema, BlogSchemaInput } from 'types/blog';
-import type { MasterSchema, MasterSchemaInput } from 'types/master';
 
 /**
  * Custom date schema that parses date strings in the site's configured timezone.
@@ -56,7 +56,7 @@ const blogCollection = defineCollection({
   }) satisfies z.ZodType<BlogSchema, z.ZodTypeDef, BlogSchemaInput>,
 });
 
-const masterCollection = defineCollection({
+const ancestorCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -84,10 +84,10 @@ const masterCollection = defineCollection({
     password: z.string().optional(),
     /** Keywords for SEO */
     keywords: z.array(z.string()).optional(),
-  }) satisfies z.ZodType<MasterSchema, z.ZodTypeDef, MasterSchemaInput>,
+  }) satisfies z.ZodType<AncestorSchema, z.ZodTypeDef, AncestorSchemaInput>,
 });
 
 export const collections = {
   blog: blogCollection,
-  master: masterCollection,
+  ancestor: ancestorCollection,
 };
