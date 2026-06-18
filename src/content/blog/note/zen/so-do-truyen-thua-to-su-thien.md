@@ -16,103 +16,104 @@ image: /images/koans/great-wave.webp
 ## ** 🇮🇳 ẤN ĐỘ
 
 ```infographic
-infographic hierarchy-tree-tech-style-capsule-item
+infographic hierarchy-tree-lr-curved-line-capsule-item
 data
   title 28 vị tổ Ấn Độ
   items
     - label Śākyamuni Buddha
       children
-        - label Mahakasyapa (I)
+        - label Mahakasyapa (tổ 1)
           children
-            - label Ananda (II)
+            - label Ananda (tổ 2)
               children
-                - label Shanavashin (III)
+                - label Shanavashin (tổ 3)
                   children
-                    - label Upagupta (IV)
+                    - label Upagupta (tổ 4)
                       children
-                        - label Dhitika (V)
+                        - label Dhitika (tổ 5)
                           children
-                            - label Mishaka (VI)
+                            - label Mishaka (tổ 6)
                               children
-                                - label Vasumitra (VII)
+                                - label Vasumitra (tổ 7)
                                   children
-                                    - label Buddhanandi (VIII)
+                                    - label Buddhanandi (tổ 8)
                                       children
-                                        - label Buddhamitra (IX)
+                                        - label Buddhamitra (tổ 9)
                                           children
-                                            - label Parshva (X)
+                                            - label Parshva (tổ 10)
                                               children
-                                                - label Punyayasha (XI)
+                                                - label Punyayasha (tổ 11)
                                                   children
-                                                    - label Anabodhi (XII)
+                                                    - label Anabodhi (tổ 12)
                                                       children
-                                                        - label Kapimala (XIII)
+                                                        - label Kapimala (tổ 13)
                                                           children
-                                                            - label Nagarjuna (XIV)
+                                                            - label Nagarjuna (tổ 14)
                                                               children
-                                                                - label Kanadeva (XV)
+                                                                - label Kanadeva (tổ 15)
                                                                   children
-                                                                    - label Rahulabhadra (XVI)
+                                                                    - label Rahulabhadra (tổ 16)
                                                                       children
-                                                                        - label Samghanandi (XVII)
+                                                                        - label Samghanandi (tổ 17)
                                                                           children
-                                                                            - label Samghayathata (XVIII)
+                                                                            - label Samghayathata (tổ 18)
                                                                               children
-                                                                                - label Kumaralata (XIX)
+                                                                                - label Kumaralata (tổ 19)
                                                                                   children
-                                                                                    - label Shayata (XX)
+                                                                                    - label Shayata (tổ 20)
                                                                                       children
-                                                                                        - label Vasubandhu (XXI)
+                                                                                        - label Vasubandhu (tổ 21)
                                                                                           children
-                                                                                            - label Manorata (XXII)
+                                                                                            - label Manorata (tổ 22)
                                                                                               children
-                                                                                                - label Haklenayasha (XXIII)
+                                                                                                - label Haklenayasha (tổ 23)
                                                                                                   children
-                                                                                                    - label Simhabodhi (XXIV)
+                                                                                                    - label Sư Tử Bồ Đề (tổ 24)
                                                                                                       children
-                                                                                                        - label Bashashita (XXV)
+                                                                                                        - label Đạt Ma Đạt
+                                                                                                          value 70
+                                                                                                          icon mingcute/ad-circle-line
                                                                                                           children
-                                                                                                            - label Punyamitra (XXVI)
+                                                                                                            - label Nhân Đà La
                                                                                                               children
-                                                                                                                - label Prajnadhara (XXVII)
+                                                                                                                - label Đạt Ma Thi Lợi Đế
+                                                                                                                - label Phá Lâu Cầu Đa La
+                                                                                                                - label Na Già Nan Đề
+                                                                                                                - label Ba La Bà Đề
+                                                                                                            - label Cù La Kỵ Lợi Bà
+                                                                                                              children
+                                                                                                                - label Ba La Bạt Ma
+                                                                                                                - label Tăng Già La Xoa
+                                                                                                        - label Bashashita (tổ 25)
+                                                                                                          children
+                                                                                                            - label Punyamitra (tổ 26)
+                                                                                                              children
+                                                                                                                - label Prajnadhara (tổ 27)
                                                                                                                   children
-                                                                                                                    - label Bodhidharma (XXVIII)
+                                                                                                                    - label Bồ-Đề-Đạt-Ma (tổ 28)
+                                                                                                                    - label Phật Đại Tiên
 ```
 
 
 
 ## ** 🇨🇳 TRUNG QUỐC
 
-```plain
-└── Bodhidharma (XXVIII)
-    └── Dazu Huike (XXIX)
-        └── Jianzhi Sengcan (XXX)
-            └── Dayi Daoxin (XXXI)
-                └── Daman Hongren (XXXII)
-                    └── Dajian Huineng (XXXIII)
-                        └── Nanyue Huairang
-                            └── Mazu Daoyi
-```
-
 ```infographic
-infographic hierarchy-tree-curved-line-rounded-rect-node
+infographic hierarchy-tree-lr-curved-line-capsule-item
 data
-  title 博客内容分类
+  title 5 vị tổ Trung Quốc
   items
-    - label 技术文章
+    - label Bodhidharma (XXVIII)
       children
-        - label 前端
+        - label Dazu Huike (XXIX)
           children
-            - label React
-            - label TypeScript
-        - label 后端
-          children
-            - label Node.js
-            - label 数据库
-    - label 生活随笔
-      children
-        - label 年度总结
-        - label 读书笔记
+            - label Jianzhi Sengcan (XXX)
+              children
+                - label Dayi Daoxin (XXXI)
+                  children
+                    - label Daman Hongren (XXXII)
+                      children
+                        - label Dajian Huineng (XXXIII)
 ```
 
 ## 🎨 **NGŨ TÔNG**
