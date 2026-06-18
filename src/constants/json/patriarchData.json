@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ma-ha-ca-diep",
+    "name": "Tổ Ma-Ha-Ca-Diếp",
+    "title": "Sơ Tổ Tây Thiên (Ấn Độ)",
+    "coords": [25.03, 85.4168],
+    "location": "Vương Xá Thành (Rajgir, bang Bihar, Ấn Độ)",
+    "color": "gold",
+    "desc": "Đệ nhất Đầu đà, nhận truyền trao Vô thượng Tâm ấn trực tiếp từ Đức Thế Tôn tại Linh Sơn pháp hội qua tích 'Niêm Hoa Vi Tiếu'.",
+    "slug": "ma-ha-ca-diep"
+  },
+  {
+    "id": "long-tho",
+    "name": "Tổ Long Thọ (Nagarjuna)",
+    "title": "Tổ thứ 14 Tây Thiên (Ấn Độ)",
+    "coords": [16.5244, 79.255],
+    "location": "Định Sơn (Nagarjunakonda, bang Andhra Pradesh, Nam Ấn)",
+    "color": "gold",
+    "desc": "Đại luận sư vĩ đại, người hệ thống hóa giáo nghĩa Tánh Không (Sunyata) và Trung Quán Tông của Phật giáo Đại thừa.",
+    "slug": "long-tho"
+  },
+  {
+    "id": "bo-de-dat-ma-kanchi",
+    "name": "Sơ Tổ Bồ Đề Đạt Ma (Kanchipuram)",
+    "title": "Tổ thứ 28 Tây Thiên (Ấn Độ)",
+    "coords": [12.8387, 79.7016],
+    "location": "Vương quốc Hương Chí cổ (Kanchipuram, Tamil Nadu, Ấn Độ)",
+    "color": "red",
+    "desc": "Vốn là hoàng tử thứ ba của nước Hương Chí tại Nam Ấn, đắc pháp y bát từ Tổ thứ 27 rồi thừa mệnh thầy đi thuyền viễn xứ về hướng Bắc để gieo hạt giống Thiền.",
+    "slug": "bo-de-dat-ma"
+  },
+  {
+    "id": "bo-de-dat-ma-hualin",
+    "name": "Tổ Đạt Ma - Tây Lai Sơ Địa",
+    "title": "Điểm cập bến Trung Hoa của Sơ Tổ Đạt Ma",
+    "coords": [23.125, 113.245],
+    "location": "Am Hoa Lâm (Quảng Châu, tỉnh Quảng Đông, Trung Quốc)",
+    "color": "red",
+    "desc": "Sau 3 năm lênh đênh vượt trùng khơi, Tổ Đạt Ma cập bến Quảng Châu vào năm 520. Nơi ngài dừng chân nay chính là Chùa Hoa Lâm giữa lòng đô thị sầm uất.",
+    "slug": "bo-de-dat-ma-viet-nam-trung-hoa"
+  },
+  {
+    "id": "bo-de-dat-ma-dingshan",
+    "name": "Tổ Đạt Ma - Vượt Sông Trường Giang",
+    "title": "Khúc quanh dốc núi Định Sơn (Giang Tô)",
+    "coords": [32.1022, 118.6653],
+    "location": "Núi Định Sơn (Phố Khẩu, Nam Kinh, Giang Tô, Trung Quốc)",
+    "color": "red",
+    "desc": "Sau cuộc hội kiến không tương hợp với Lương Vũ Đế, ngài ngắt một nhành cỏ lau lướt sóng qua sông Trường Giang về hướng Bắc, ẩn trú tại núi Định Sơn tĩnh mặc.",
+    "slug": "bo-de-dat-ma"
+  },
+  {
+    "id": "bo-de-dat-ma-shaolin",
+    "name": "Sơ Tổ Đạt Ma - Thiếu Lâm Tự",
+    "title": "Chín năm Diện Bích kiến tính",
+    "coords": [34.5043, 112.9394],
+    "location": "Động Đạt Ma, Chùa Thiếu Lâm (Mật Huyện, Tùng Sơn, Hà Nam)",
+    "color": "red",
+    "desc": "Trạm dừng chân vĩ đại nhất. Ngài nhập định 'Bích quán' suốt 9 năm trong hang đá lạnh, truyền y bát cho Nhị Tổ Huệ Khả, mở ra kỷ nguyên thiền tông rực rỡ.",
+    "slug": "bo-de-dat-ma-thieu-lam"
+  },
+  {
+    "id": "hue-nang-caoxi",
+    "name": "Lục Tổ Huệ Năng (Tào Khê)",
+    "title": "Đời thứ 6 Đông Độ (Khai sáng Đốn Ngộ)",
+    "coords": [24.6464, 113.6311],
+    "location": "Chùa Nam Hoa, Tào Khê (Quảng Đông, Trung Quốc)",
+    "color": "gold",
+    "desc": "Vị tổ tiều phu gánh củi, nghe kinh Kim Cang đại ngộ. Ngài chủ trương tông phái Nam Tông Đốn Ngộ, đưa tinh thần Thiền bình dị dung nhập sâu sắc vào đời sống thường nhật.",
+    "slug": "luc-to-hue-nang"
+  },
+  {
+    "id": "lam-te-hebei",
+    "name": "Sư Lâm Tế Nghĩa Huyền",
+    "title": "Khai tổ Tông Lâm Tế",
+    "coords": [38.1415, 114.5714],
+    "location": "Chùa Lâm Tế (Trấn Châu, nay là huyện Chính Định, tỉnh Hà Bắc)",
+    "color": "gold",
+    "desc": "Thiền sư lỗi lạc thời nhà Đường nổi danh với các chiêu thức sấm sét như tiếng Hét (Lâm Tế Hống) và cây Gậy (Lâm Tế Bổng), khai thị triết lý 'Vô vị chân nhân' tự chủ.",
+    "slug": "lam-te-nghia-huyen"
+  }
+]

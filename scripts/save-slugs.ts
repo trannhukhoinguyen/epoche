@@ -13,7 +13,7 @@ const dryRun = process.argv.includes('--dry-run');
 
 const yamlConfig = load(readFileSync('config/site.yaml', 'utf8')) as SiteYamlConfig;
 const locales = yamlConfig.i18n?.locales || [];
-const defaultLocale = yamlConfig.i18n?.defaultLocale ?? 'zh';
+const defaultLocale = yamlConfig.i18n?.defaultLocale ?? 'vi';
 const allKnownLocales = new Set(locales.map((l) => l.code));
 
 // Mirrors getSlugLocaleInfo from src/lib/content/locale.ts

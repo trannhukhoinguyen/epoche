@@ -93,7 +93,7 @@ export function getPostDescriptionWithSummary(post: BlogPost, locale: string = d
 /**
  * Get all posts sorted by date (newest first)
  * In production, draft posts are filtered out
- * @param locale Optional locale filter — undefined returns all, 'zh' returns default only, 'en' returns en + fallback
+ * @param locale Optional locale filter — undefined returns all, 'vi' returns default only, 'en' returns en + fallback
  */
 export async function getSortedPosts(locale?: string): Promise<CollectionEntry<'blog'>[]> {
   return memoize('sortedPosts', locale ?? '__all__', async () => {

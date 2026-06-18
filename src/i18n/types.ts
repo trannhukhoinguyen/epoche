@@ -2,10 +2,10 @@
  * i18n Type Definitions
  *
  * Core types for the internationalization system.
- * Locale codes follow BCP 47 short format (e.g., 'zh', 'en', 'ja').
+ * Locale codes follow BCP 47 short format (e.g., 'vi', 'zh', 'en', 'ja').
  */
 
-import type { uiStrings as zhStrings } from './translations/zh';
+import type { uiStrings as viStrings } from './translations/vi';
 
 /**
  * Supported locale code (derived from site.yaml i18n.locales).
@@ -17,11 +17,11 @@ import type { uiStrings as zhStrings } from './translations/zh';
 export type Locale = string;
 
 /**
- * Translation key — all valid keys from the default (zh) dictionary.
+ * Translation key — all valid keys from the default (vi) dictionary.
  * Using `keyof typeof zhStrings` ensures type safety: any key used in `t()`
  * must exist in the default translation file.
  */
-export type TranslationKey = keyof typeof zhStrings;
+export type TranslationKey = keyof typeof viStrings;
 
 /**
  * UI string dictionary type.

@@ -1,0 +1,34 @@
+---
+import HomeSider from '@components/layout/HomeSider.astro';
+import MasterRequestForm from '@components/masters/MasterRequestForm';
+import MastersGrid from '@components/masters/MastersGrid';
+import Cover from '@components/ui/cover/Cover.astro';
+import { CONTENT_PADDING } from '@constants/layout';
+import { siteConfig } from '@constants/site-config';
+import Layout from '@layouts/Layout.astro';
+import TwoColumnLayout from '@layouts/TwoColumnLayout.astro';
+import { Comment } from '@/components/comment';
+import { getLocaleFromUrl, t } from '@/i18n';
+
+const locale = getLocaleFromUrl(Astro.url.pathname);
+const title = `${t(locale, 'masters.title')} | ${siteConfig.title}`;
+const description = t(locale, 'masters.title');
+---
+
+<Layout title={title} description={description}>
+  <TwoColumnLayout>
+    <Cover slot="cover" title={t(locale, 'masters.title')} />
+    <HomeSider slot="sider" />
+    <div
+      class={`bg-gradient-start shadow-box tablet:shadow-none flex flex-col gap-10 overflow-hidden ${CONTENT_PADDING.standard}`}
+    >
+      <div class="mt-4">
+        <MastersGrid client:load />
+      </div>
+<!--      <div class="mb-4">
+        <MasterRequestForm client:visible />
+        <Comment />
+      </div>-->
+    </div>
+  </TwoColumnLayout>
+</Layout>

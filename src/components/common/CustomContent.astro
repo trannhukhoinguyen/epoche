@@ -16,7 +16,7 @@ const finalConfig = { ...defaultContentConfig, ...config };
 ---
 
 <div
-  class:list={['custom-content', { 'relative z-5': christmasConfig.enabled && christmasConfig.features.snowfall }]}
+  class:list={['custom-content', { 'relative z-5': christmasConfig?.enabled && christmasConfig?.features?.snowfall }]}
   data-config={JSON.stringify(finalConfig)}
 >
   {Content ? <Content /> : <slot />}

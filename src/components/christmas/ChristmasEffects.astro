@@ -7,7 +7,7 @@ const { snowfall } = christmasConfig;
 ---
 
 {
-  christmasConfig.enabled && christmasConfig.features.snowfall && (
+  christmasConfig?.enabled && christmasConfig?.features?.snowfall && (
     <>
       {/* 背景雪 - 在内容后面 */}
       <SnowfallCanvas

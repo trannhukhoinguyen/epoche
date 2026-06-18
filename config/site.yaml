@@ -43,7 +43,7 @@ site:
 # =============================================================================
 # defaultLocale: 默认语言代码（URL 不带前缀）
 # locales: 支持的语言列表
-#   - code: 语言代码（BCP 47 短格式，如 'zh', 'en', 'ja'）
+#   - code: 语言代码（BCP 47 短格式，如 'vi', 'zh', 'en', 'ja'）
 #   - label: 语言显示名称（如 '中文', 'English'）
 # -----------------------------------------------------------------------------
 i18n:
@@ -112,7 +112,7 @@ featuredCategories:
 # =============================================================================
 # 字段说明：
 #   slug: URL 路径（必填），如 'weekly' 对应 /weekly 路径
-#         注意：不能与保留路由冲突，包括：about, categories, tags, friends, posts, archives, api, _astro, rss.xml, sitemap.xml, robots.txt, favicon.ico 等
+#         注意：不能与保留路由冲突，包括：about, categories, tags, masters, friends, posts, archives, api, _astro, rss.xml, sitemap.xml, robots.txt, favicon.ico 等
 #   categoryName: 对应的分类名称（必填，需在 categoryMap 中存在）
 #   label: 侧边栏/导航中显示的简短名称（可选）
 #   fullName: 系列页面标题显示的完整名称（可选）
@@ -245,6 +245,65 @@ friends:
       desc: 分享生活与技术的小站
       image: https://api.dicebear.com/7.x/avataaars/svg?seed=Bob
       color: '#FBC1CC'
+    - site: 示例博客 C
+      url: https://example-c.com
+      owner: Carol
+      desc: 记录学习与成长的地方
+      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Carol
+      color: '#ABDCFF'
+
+# =============================================================================
+# Master Links
+# =============================================================================
+# intro: 页面介绍文字配置
+#   title: 页面标题
+#   subtitle: 页面副标题
+#   applyTitle: 申请区块标题
+#   applyDesc: 申请说明文字
+#   exampleYaml: 申请格式示例（YAML 格式）
+# data: 友链列表数组
+#   - site: 站点名称
+#   - url: 站点地址
+#   - owner: 站长昵称
+#   - desc: 站点描述/简介
+#   - image: 头像图片 URL
+#   - color: (可选) 卡片背景色，十六进制格式
+# -----------------------------------------------------------------------------
+masters:
+  intro:
+    title: 友情链接 # 页面标题
+    subtitle: 欢迎交换友链！ # 页面副标题
+    applyTitle: 申请友链 # 申请区块标题
+    applyDesc: 请在本页留言，格式如下 # 申请说明
+    exampleYaml: | # 申请格式示例，会显示在页面上
+      - site: 你的博客名称 # 站点名称
+        url: https://your-blog.com/ # 站点网址
+        owner: 你的昵称 # 昵称
+        desc: 站点简介 # 站点简介
+        image: https://your-blog.com/avatar.jpg # 头像链接
+        color: "#ffc0cb" # 主题色（可选）
+  data: # 友链列表
+    - site: 余弦の博客
+      url: https://blog.cosine.ren
+      owner: cos
+      desc: FE / ACG / 手工 / 深色模式强迫症 / INFP / 兴趣广泛养两只猫的老宅女 / remote
+      image: https://blog.cosine.ren/img/avatar.webp
+      color: '#ed788b'
+
+    - site: 示例博客 A
+      url: https://example-a.com
+      owner: Alice
+      desc: 一个热爱技术的开发者
+      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Alice
+      color: '#BEDCFF'
+
+    - site: 示例博客 B
+      url: https://example-b.com
+      owner: Bob
+      desc: 分享生活与技术的小站
+      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Bob
+      color: '#FBC1CC'
+
     - site: 示例博客 C
       url: https://example-c.com
       owner: Carol
@@ -397,10 +456,14 @@ navigation:
         nameKey: nav.archives
         path: /archives
         icon: ri:archive-2-fill
-  - name: 友链
-    nameKey: nav.friends
-    path: /friends
-    icon: ri:links-line
+#  - name: 友链
+#    nameKey: nav.friends
+#    path: /friends
+#    icon: ri:links-line
+  - name: Thiền sư
+    nameKey: nav.masters
+    path: /masters
+    icon: ri:user-voice-fill
   - name: 关于
     nameKey: nav.about
     path: /about
@@ -456,7 +519,7 @@ navigation:
 #     loading: 加载方式 (可选) 'lazy' | 'eager';
 #   waline: 简洁安全的评论系统 (https://waline.js.org)
 #     serverURL: Waline 服务端地址 (必填)
-#     lang: 语言 (默认: 'zh-CN')
+#     lang: 语言 (默认: 'vi-VI')
 #     dark: 暗黑模式支持 (默认: 'html.dark')
 #           - 字符串: CSS 选择器，当该选择器生效时启用暗黑模式
 #           - true: 根据设备自适应
@@ -492,7 +555,7 @@ navigation:
     # envId: # Twikoo 环境 ID (腾讯云) 或 Vercel 环境地址 (必填)
     # region: # 环境地域，默认为 ap-shanghai
     # path: # 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-    # lang: # 语言 (默认: 'zh-CN')
+    # lang: # 语言 (默认: 'vi-VI')
 comment:
   provider: none  # 'remark42' | 'giscus' | 'waline' | 'twikoo' | 'none'
   # remark42:
@@ -507,11 +570,11 @@ comment:
   #   reactionsEnabled: '1'            # 启用 reactions ('0' | '1')
   #   emitMetadata: '0'                # 发送元数据 ('0' | '1')
   #   inputPosition: top               # 输入框位置 ('top' | 'bottom')
-  #   lang: zh-CN                      # 语言
+  #   lang: vi-VI                     # 语言
 
   # waline:
   #   serverURL: https://your-waline.vercel.app  # Waline 服务端地址 (必填)
-  #   lang: zh-CN                      # 语言 (默认: 'zh-CN')
+  #   lang: vi-VI                      # 语言 (默认: 'vi-VI')
   #   dark: html.dark                  # 暗黑模式 (默认: 'html.dark')
   #                                    # 可选: true (自适应) | false (禁用) | CSS选择器字符串
   #   meta:                            # 评论者信息字段 (默认: ['nick', 'mail', 'link'])
@@ -550,7 +613,7 @@ comment:
     envId: https://your-twikoo.vercel.app  # Twikoo 环境 ID (腾讯云) 或 Vercel 环境地址 (必填)
     # region: ap-shanghai              # 环境地域，默认为 ap-shanghai
     # path: location.pathname          # 用于区分不同文章的自定义 js 路径
-    # lang: zh-CN                     # 语言 (默认: 'zh-CN')
+    # lang: vi-VI                     # 语言 (默认: 'vi-VI')
 
 # =============================================================================
 # Analytics (Umami)

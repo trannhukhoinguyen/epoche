@@ -50,8 +50,8 @@ const locale = getLocaleFromUrl(Astro.url.pathname);
     </div>
     <Navigator client:load currentPath={Astro.url.pathname} locale={locale} />
   </div>
-  {christmasConfig.enabled && christmasConfig.features.christmasCoverDecoration && <ChristmasLights />}
-  {christmasConfig.enabled && <ChristmasOrnamentToggle client:only="react" />}
+  {christmasConfig?.enabled && christmasConfig?.features?.christmasCoverDecoration && <ChristmasLights />}
+  {christmasConfig?.enabled && <ChristmasOrnamentToggle client:only="react" />}
 </div>
 
 <!-- 移动端菜单按钮 -->
