@@ -195,8 +195,12 @@ export const uiStrings: UIStrings = {
   'breadcrumb.goToCategory': 'Go to {name} category',
 
   // ── Floating Group ──────────────────────────────────────────
-  'floating.backToTop': 'Back Top',
-  'floating.scrollToBottom': 'Scroll Bottom',
+  'floating.stopReadingPost': 'Dừng đọc',
+  'floating.readPost': 'Đọc bài viết',
+  'floating.stopAutoRepeat': 'Tắt tự động đọc lại',
+  'floating.autoRepeat': 'Bật tự động đọc lại',
+  'floating.backToTop': 'Lên đầu Trang',
+  'floating.scrollToBottom': 'Xuống cuối Trang',
   'floating.toggleTheme': 'Toggle theme',
   'floating.christmas': 'Toggle Christmas effects',
   'floating.bgm': 'Background music',

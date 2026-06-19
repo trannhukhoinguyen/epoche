@@ -314,6 +314,14 @@ export const bgmConfig: { enabled: boolean; metingApi?: string; audio: BgmAudioG
   audio: yamlConfig.bgm?.audio ?? [],
 };
 
+// Map YAML readPost & autoRepeat config
+export const readPostConfig: { enabled: boolean } = {
+  enabled: yamlConfig.readPost?.enabled,
+};
+export const autoRepeatConfig: { enabled: boolean } = {
+  enabled: yamlConfig.autoRepeat?.enabled,
+};
+
 // Bangumi media tracking config — null when disabled (section commented out in YAML)
 export const bangumiConfig: BangumiConfig | null = yamlConfig.bangumi ?? null;
 
