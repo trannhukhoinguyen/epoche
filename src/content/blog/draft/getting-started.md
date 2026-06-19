@@ -5,10 +5,9 @@ catalog: true
 date: 2024-01-01 00:00:00
 description: 欢迎使用 astro-koharu 博客主题！这是一个基于 Astro 的现代化博客系统，拥有优雅的界面和丰富的功能。
 tags:
-  - 入门
-  - Astro
+  - guide
 categories:
-  - 工具
+  - draft
 sticky: true
 ---
 

@@ -287,7 +287,7 @@ export interface WalineConfig {
   /**
    * 显示语言
    * Display language
-   * @default 'vi-VI'
+   * @default 'vi-VN'
    */
   lang?: string;
 
@@ -592,7 +592,7 @@ export interface BangumiConfig {
 // =============================================================================
 
 export interface LocaleConfig {
-  /** Locale code (BCP 47 short format, e.g., 'vi', 'zh', 'en', 'ja') */
+  /** Locale code (BCP 47 short format, e.g., 'vi', 'zh', 'en', 'ja', 'ko') */
   code: string;
   /** Display label for the locale (e.g., '中文', 'English') */
   label?: string;

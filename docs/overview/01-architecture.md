@@ -273,7 +273,7 @@ import '@styles/index.css'; // 全局样式
 ---
 
 <!doctype html>
-<html transition:name="root" lang="vi-VI">
+<html transition:name="root" lang="vi-VN">
   <head>
     <!-- 3. SEO 元数据 -->
     <meta name="description" content={description} />

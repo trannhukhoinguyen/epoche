@@ -5,11 +5,9 @@ catalog: true
 date: 2024-01-03 00:00:00
 description: 介绍如何定制 astro-koharu 的外观，包括配色、布局和动画效果。
 tags:
-  - 定制
-  - CSS
-  - Tailwind
+  - guide
 categories:
-  - [笔记, 前端]
+  - draft
 cover: /img/cover/3.webp
 ---
 

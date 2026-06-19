@@ -2,7 +2,7 @@
  * i18n Type Definitions
  *
  * Core types for the internationalization system.
- * Locale codes follow BCP 47 short format (e.g., 'vi', 'zh', 'en', 'ja').
+ * Locale codes follow BCP 47 short format (e.g., 'vi', 'zh', 'en', 'ja', 'ko').
  */
 
 import type { uiStrings as viStrings } from './translations/vi';

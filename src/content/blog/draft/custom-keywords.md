@@ -4,9 +4,9 @@ link: custom-keywords
 date: 2026-04-05 18:43:11
 description: 展示如何设置文章关键词。
 tags:
-  - 教程
+  - guide
 categories:
-  - 笔记
+  - draft
 keywords:
   - 示例关键词一
   - 示例关键词二

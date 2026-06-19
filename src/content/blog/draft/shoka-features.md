@@ -1,12 +1,10 @@
 ---
 title: Shoka 主题 Markdown 语法演示
 date: 2026-02-07 12:00:00
-categories:
-  - 笔记
 tags:
-  - Shoka
-  - Markdown
-  - 测试
+  - guide
+categories:
+  - draft
 description: 展示所有 Shoka 主题兼容的特殊 Markdown 语法
 math: true
 quiz: true

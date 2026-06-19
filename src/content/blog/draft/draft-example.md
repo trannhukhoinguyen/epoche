@@ -5,10 +5,9 @@ catalog: true
 date: 2024-01-06 00:00:00
 description: 这是一篇草稿示例，只有在开发环境才能看到。
 tags:
-  - 草稿
-  - 示例
+  - guide
 categories:
-  - 工具
+  - draft
 draft: true
 ---
 

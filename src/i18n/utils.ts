@@ -168,14 +168,15 @@ export function getAlternateUrl(currentPathname: string, targetLocale: Locale): 
  *
  * @example
  * ```ts
- * getHtmlLang('vi')  // => 'vi-VI'
+ * getHtmlLang('vi')  // => 'vi-VN'
  * getHtmlLang('zh')  // => 'zh-CN'
- * getHtmlLang('en')  // => 'en'
- * getHtmlLang('ja')  // => 'ja'
+ * getHtmlLang('en')  // => 'en-EN'
+ * getHtmlLang('ja')  // => 'ja-JP'
+ * getHtmlLang('ko')  // => 'ko-KR'
  * ```
  */
 const HTML_LANG_MAP: Record<string, string> = {
-  zh: 'zh-CN',
+  vi: 'vi-VN',
 };
 
 export function getHtmlLang(locale: Locale): string {

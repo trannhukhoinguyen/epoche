@@ -7,11 +7,9 @@ math: true
 quiz: true
 description: astro-koharu 博客的完整使用指南，包含快速开始、配置说明、文章系统、界面功能等详细介绍
 tags:
-  - Astro
-  - 博客
-  - 教程
+  - guide
 categories:
-  - 工具
+  - draft
 ---
 
 一份完整的 astro-koharu 博客系统使用指南，帮助你快速上手并充分利用所有功能特性。
@@ -2740,7 +2738,7 @@ comment:
   provider: waline
   waline:
     serverURL: https://your-waline-server.vercel.app # Waline 服务端地址（必填）
-    lang: vi-VI # 语言
+    lang: vi-VN # 语言
     dark: html.dark # 暗黑模式 CSS 选择器
     meta: # 评论者信息字段
       - nick
@@ -2765,7 +2763,7 @@ comment:
 | 参数             | 类型                                   | 默认值                      | 说明                                 |
 | ---------------- | -------------------------------------- |--------------------------| ------------------------------------ |
 | `serverURL`      | `string`                               | **必填**                   | Waline 服务端地址                    |
-| `lang`           | `string`                               | `'vi-VI'`                | 界面语言（支持 vi-VI, zh-CN, en, jp 等）    |
+| `lang`           | `string`                               | `'vi-VN'`                | 界面语言（支持 vi-VN, zh-CN, en, jp 等）    |
 | `dark`           | `string`                               | `'html.dark'`            | 暗黑模式 CSS 选择器                  |
 | `meta`           | `string[]`                             | `['nick','mail','link']` | 评论者信息字段                       |
 | `requiredMeta`   | `string[]`                             | `['nick']`               | 必填字段                             |
@@ -2916,7 +2914,7 @@ comment:
 | `reactionsEnabled` | `'0' \| '1'`        | 是否启用 reactions，默认 `'1'`                |
 | `emitMetadata`     | `'0' \| '1'`        | 是否发送页面元数据，默认 `'0'`                |
 | `inputPosition`    | `'top' \| 'bottom'` | 评论输入框位置，默认 `'top'`                  |
-| `lang`             | `string`            | 界面语言，默认 `'vi-VI'`                      |
+| `lang`             | `string`            | 界面语言，默认 `'vi-VN'`                      |
 | `host`             | `string`            | 自托管 Giscus 实例的地址（可选）              |
 | `theme`            | `string`            | 固定主题（不设置则跟随站点主题切换）          |
 | `loading`          | `'lazy' \| 'eager'` | 加载方式，默认 `'lazy'`                       |
@@ -2940,7 +2938,7 @@ comment:
 
 **参考链接：**
 
-- [giscus 官网](https://giscus.app/vi-VI)
+- [giscus 官网](https://giscus.app/vi-VN)
 - [giscus-component 文档](https://github.com/giscus/giscus-component)
 
 ### Twikoo

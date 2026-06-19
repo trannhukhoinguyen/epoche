@@ -104,11 +104,51 @@ export async function fetchMeting(server: string, type: string, id: string, apiU
 }
 
 /** Resolve multiple music URLs into a flat song list. */
-export async function resolvePlaylist(urls: string[], apiUrl?: string): Promise<MetingSong[]> {
+/*export async function resolvePlaylist(urls: string[], apiUrl?: string): Promise<MetingSong[]> {
   const results = await Promise.allSettled(
     urls.map((url) => {
       const parsed = parseMusicUrl(url);
       if (!parsed) return Promise.resolve([]);
+      return fetchMeting(parsed.server, parsed.type, parsed.id, apiUrl);
+    }),
+  );
+
+  return results.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
+}*/
+
+export async function resolvePlaylist(urls: string[], apiUrl?: string): Promise<MetingSong[]> {
+  const results = await Promise.allSettled(
+    urls.map((url) => {
+      const parsed = parseMusicUrl(url);
+
+      // NẾU LÀ LINK LOCAL HOẶC FILE MP3 TRỰC TIẾP
+      if (!parsed) {
+        // Kiểm tra xem có phải link file mp3 hoặc đường dẫn nội bộ không
+        if (url.endsWith('.mp3') || url.startsWith('/')) {
+          // Lấy tên file làm tên bài hát tạm thời
+          const filename = url.substring(url.lastIndexOf('/') + 1).replace('.mp3', '');
+
+          const localSong: MetingSong = {
+            name: decodeURIComponent(filename), // Tự động lấy tên file làm tên bài hát
+            artist: 'Local Audio',
+            url: url, // Đường dẫn file (vd: /audio/my-song.mp3)
+            pic: '/img/avatar.webp', // Hình ảnh mặc định (hoặc tùy biến)
+            lrc: '', // Không có lời bài hát
+          };
+          return Promise.resolve([localSong]);
+        }
+        return Promise.resolve([]);
+      }
+
+      // Audio từ link JSON
+      if (url.endsWith('.json')) {
+        return fetch(url)
+          .then((res) => res.json())
+          .then((data) => (Array.isArray(data) ? data : []))
+          .catch(() => []);
+      }
+
+      // Nếu là link NetEase/QQ Music thì vẫn chạy qua Meting API bình thường
       return fetchMeting(parsed.server, parsed.type, parsed.id, apiUrl);
     }),
   );

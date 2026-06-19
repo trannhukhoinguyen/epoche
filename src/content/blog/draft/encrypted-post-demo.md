@@ -3,11 +3,10 @@ title: 加密文章演示
 date: 2026-02-17
 password: demo
 description: "这是一篇演示加密功能的文章"
-categories:
-  - 笔记
 tags:
-  - 加密
-  - 测试
+  - guide
+categories:
+  - draft
 ---
 
 恭喜你解锁了这篇文章！！

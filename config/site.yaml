@@ -11,19 +11,19 @@
 # Site Basic Information
 # =============================================================================
 site:
-  title: 余弦の博客 # 网站名称
-  alternate: cosine # 网站英文名称 用于页脚、Logo、@ handle 等
-  subtitle: WA 的一声就哭了 # 网站副标题
-  name: cos # 作者名称 - 请修改为你的名字
-  description: 一个基于 Astro 的现代化博客主题 # 网站描述
-  avatar: /img/avatar.webp # 网站头像
-  showLogo: true # 是否显示 Logo
-  author: Author # 作者名称 - 请修改为你的名字
-  url: https://koharu.cosine.ren # 站点 URL 用于 RSS 和 SEO
-  defaultOgImage: /img/avatar.webp # 默认 Open Graph 图片
-  startYear: 2026 # 建站年份
-  timezone: Asia/Shanghai # 时区配置 (IANA 格式)，用于日期显示和处理
-  keywords: # SEO 关键词 (全局)
+  title: Tổ Sư Thiền # Tên trang web
+  alternate: Thiền Tổ Sư # Tên tiếng Anh của trang web (dùng cho chân trang, logo, tên người dùng @, v.v.)
+  subtitle: Khi chưa có trời đất ta là cái gì # Phụ đề trang web
+  name: tosuthien.org # Tên tác giả - Vui lòng thay đổi thành tên của bạn
+  description: Một giao diện blog hiện đại dựa trên Astro # Mô tả trang web
+  avatar: /img/avatar.webp # Ảnh đại diện trang web
+  showLogo: true # Có hiển thị logo hay không
+  author: tosuthien.org # Tên tác giả - Vui lòng thay đổi thành tên của bạn
+  url: https://tosuthien.org # URL trang web (dùng cho RSS và SEO)
+  defaultOgImage: /img/avatar.webp # Hình ảnh Open Graph mặc định
+  startYear: 2026 # Năm trang web được tạo
+  timezone: Asia/Hanoi # Cấu hình múi giờ (định dạng IANA), được sử dụng để hiển thị và xử lý ngày tháng
+  keywords: # Từ khóa SEO (Toàn cầu)
     - 博客
     - Astro
     - 技术
@@ -43,7 +43,7 @@ site:
 # =============================================================================
 # defaultLocale: 默认语言代码（URL 不带前缀）
 # locales: 支持的语言列表
-#   - code: 语言代码（BCP 47 短格式，如 'vi', 'zh', 'en', 'ja'）
+#   - code: 语言代码（BCP 47 短格式，如 'vi', 'zh', 'en', 'ja', 'ko'）
 #   - label: 语言显示名称（如 '中文', 'English'）
 # -----------------------------------------------------------------------------
 i18n:
@@ -58,6 +58,8 @@ i18n:
       # enabled: false  # 内容存在但暂时禁用（保留内容但不生成路由）
     - code: ja
       label: 日本語
+    - code: ko
+      label: 한국어
 
 # =============================================================================
 # Category Map
@@ -66,12 +68,12 @@ i18n:
 # =============================================================================
 categoryMap:
   # Primary categories
-  随笔: life
-  笔记: note
-  工具: tools
+  族长: patriarch
+  禅宗: zen
+  草稿: draft
   周刊: weekly
   # Secondary categories (for nested paths)
-  前端: front-end
+  # down_category: Down Category
   # Add more as needed:
   # 书摘: reading
   # 后端: back-end
@@ -89,22 +91,22 @@ categoryMap:
 #   description: 分类描述文字，显示在卡片上
 # -----------------------------------------------------------------------------
 featuredCategories:
-  - link: life # 对应 categoryMap 中 随笔: life
-    label: 随笔
+  - link: patriarch # 对应 categoryMap 中 族长: patriarch
+    label: 族长
     image: /img/cover/2.webp
-    description: 生活记录、随想随笔
-  - link: note # 对应 categoryMap 中 笔记: note
-    label: 笔记
+    description: 族长
+  - link: zen # 对应 categoryMap 中 禅宗: zen
+    label: 禅宗
     image: /img/cover/4.webp
-    description: 技术笔记、学习笔记
-  - link: note/front-end # 嵌套分类：笔记/前端
-    label: 前端
+    description: 禅宗
+  - link: draft # 嵌套分类：笔记/前端
+    label: 草稿
     image: /img/cover/1.webp
-    description: 前端技术相关
-  - link: tools # 对应 categoryMap 中 工具: tools
-    label: 工具
-    image: /img/cover/11.webp
-    description: 工具使用、效率提升
+    description: 草稿
+  # - link: up_category/down_category # 对应 categoryMap 中 工具: tools
+  #   label: 工具
+  #   image: /img/cover/11.webp
+  #   description: 工具使用、效率提升
 
 # =============================================================================
 # Featured Series
@@ -164,11 +166,11 @@ featuredSeries:
 # -----------------------------------------------------------------------------
 social:
   github:
-    url: https://github.com/your-username # 替换为你的 GitHub 链接
+    url: https://github.com/trannhukhoinguyen # 替换为你的 GitHub 链接
     icon: ri:github-fill # Remix Icon 的 GitHub 图标
     color: '#191717' # (可选) 图标颜色
   email:
-    url: mailto:your@email.com # 替换为你的邮箱，需加 mailto: 前缀
+    url: mailto:tosuthien.org@gmail.com # 替换为你的邮箱，需加 mailto: 前缀
     icon: ri:mail-line
     color: '#55acd5'
   rss:
@@ -283,26 +285,6 @@ ancestors:
         image: https://your-blog.com/avatar.jpg # 头像链接
         color: "#ffc0cb" # 主题色（可选）
   data: # 友链列表
-    - site: 余弦の博客
-      url: https://blog.cosine.ren
-      owner: cos
-      desc: FE / ACG / 手工 / 深色模式强迫症 / INFP / 兴趣广泛养两只猫的老宅女 / remote
-      image: https://blog.cosine.ren/img/avatar.webp
-      color: '#ed788b'
-
-    - site: 示例博客 A
-      url: https://example-a.com
-      owner: Alice
-      desc: 一个热爱技术的开发者
-      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Alice
-      color: '#BEDCFF'
-
-    - site: 示例博客 B
-      url: https://example-b.com
-      owner: Bob
-      desc: 分享生活与技术的小站
-      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Bob
-      color: '#FBC1CC'
 
     - site: 示例博客 C
       url: https://example-c.com
@@ -460,7 +442,7 @@ navigation:
 #    nameKey: nav.friends
 #    path: /friends
 #    icon: ri:links-line
-  - name: Thiền sư
+  - name: Tổ sư
     nameKey: nav.ancestors
     path: /ancestors
     icon: ri:user-voice-fill
@@ -519,7 +501,7 @@ navigation:
 #     loading: 加载方式 (可选) 'lazy' | 'eager';
 #   waline: 简洁安全的评论系统 (https://waline.js.org)
 #     serverURL: Waline 服务端地址 (必填)
-#     lang: 语言 (默认: 'vi-VI')
+#     lang: 语言 (默认: 'vi-VN')
 #     dark: 暗黑模式支持 (默认: 'html.dark')
 #           - 字符串: CSS 选择器，当该选择器生效时启用暗黑模式
 #           - true: 根据设备自适应
@@ -555,7 +537,7 @@ navigation:
     # envId: # Twikoo 环境 ID (腾讯云) 或 Vercel 环境地址 (必填)
     # region: # 环境地域，默认为 ap-shanghai
     # path: # 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-    # lang: # 语言 (默认: 'vi-VI')
+    # lang: # 语言 (默认: 'vi-VN')
 comment:
   provider: none  # 'remark42' | 'giscus' | 'waline' | 'twikoo' | 'none'
   # remark42:
@@ -570,11 +552,11 @@ comment:
   #   reactionsEnabled: '1'            # 启用 reactions ('0' | '1')
   #   emitMetadata: '0'                # 发送元数据 ('0' | '1')
   #   inputPosition: top               # 输入框位置 ('top' | 'bottom')
-  #   lang: vi-VI                     # 语言
+  #   lang: vi-VN                     # 语言
 
   # waline:
   #   serverURL: https://your-waline.vercel.app  # Waline 服务端地址 (必填)
-  #   lang: vi-VI                      # 语言 (默认: 'vi-VI')
+  #   lang: vi-VN                      # 语言 (默认: 'vi-VN')
   #   dark: html.dark                  # 暗黑模式 (默认: 'html.dark')
   #                                    # 可选: true (自适应) | false (禁用) | CSS选择器字符串
   #   meta:                            # 评论者信息字段 (默认: ['nick', 'mail', 'link'])
@@ -613,7 +595,7 @@ comment:
     envId: https://your-twikoo.vercel.app  # Twikoo 环境 ID (腾讯云) 或 Vercel 环境地址 (必填)
     # region: ap-shanghai              # 环境地域，默认为 ap-shanghai
     # path: location.pathname          # 用于区分不同文章的自定义 js 路径
-    # lang: vi-VI                     # 语言 (默认: 'vi-VI')
+    # lang: vi-VN                     # 语言 (默认: 'vi-VN')
 
 # =============================================================================
 # Analytics (Umami)
@@ -663,12 +645,10 @@ bgm:
   enabled: true  # (有 audio 时自动启用，显式 false 可禁用)
   # metingApi: https://163.hyc.moe/  # Meting API 地址，默认为 https://163.hyc.moe/，推荐自部署
   audio:
-    - title: 最爱山山
+    - title: Nhạc Local
       list:
-        - https://music.163.com/playlist?id=8676645748
-    - title: Love Vocaloid
-      list:
-        - https://music.163.com/playlist?id=8882890045
+        - /audio/Ngài Triệu Châu vì sao nói Không.m4a
+        - /audio/Trung Phong Pháp Ngữ - sinh tử thiết - tâm tha thiết - không bí quyết.mp3
 
 christmas:
   enabled: false # 总开关

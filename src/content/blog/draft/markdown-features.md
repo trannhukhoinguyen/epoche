@@ -5,10 +5,9 @@ catalog: true
 date: 2024-01-02 00:00:00
 description: 展示 astro-koharu 支持的所有 Markdown 增强功能，包括代码高亮、Mermaid 图表、GFM 表格、Shoka 兼容语法等。
 tags:
-  - Markdown
-  - 教程
+  - guide
 categories:
-  - 笔记
+  - draft
 ---
 
 本文展示 astro-koharu 支持的所有 Markdown 增强功能。
