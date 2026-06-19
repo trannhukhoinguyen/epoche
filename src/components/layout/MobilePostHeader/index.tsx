@@ -14,6 +14,8 @@ import { siteConfig } from '@/constants/site-config';
 import { HeadingTitle } from './HeadingTitle';
 import { MobileTOCDropdown } from './MobileTOCDropdown';
 import { ProgressCircle } from './ProgressCircle';
+import SpeechButton from '../ui/SpeechButton.astro';
+
 
 interface MobilePostHeaderProps {
   /** Whether the current page is a post page */
@@ -107,6 +109,9 @@ export function MobilePostHeader({
                   aria-label={t('toc.expand')}
                 >
                   {/* Progress circle - fixed size container */}
+                  <div className="relative shrink-0">
+                    <SpeechButton />
+                  </div>
                   <div className="relative shrink-0">
                     <ProgressCircle size={32} strokeWidth={2.5} />
                   </div>
