@@ -7,7 +7,7 @@
  * - Expand/collapse toggle
  */
 
-import { autoRepeatConfig, bgmConfig, christmasConfig, readPostConfig } from '@constants/site-config';
+import { bgmConfig, christmasConfig } from '@constants/site-config';
 import { useIsMounted } from '@hooks/useIsMounted';
 import { useTranslation } from '@hooks/useTranslation';
 import { Icon } from '@iconify/react';
@@ -16,8 +16,6 @@ import { useStore } from '@nanostores/react';
 import { $bgmPanelOpen, toggleBgmPanel } from '@store/bgm';
 import { christmasEnabled, disableChristmasCompletely, enableChristmas, initChristmasState } from '@store/christmas';
 import { $isDrawerOpen } from '@store/modal';
-// IMPORT THÊM CÁC STORE VÀ HÀM CỦA READ POST VÀ AUTO REPEAT
-import { $isAutoRepeat, $isReading, toggleAutoRepeat, toggleReading } from '@store/readPost';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 
@@ -58,28 +56,9 @@ export default function FloatingGroup() {
   const isChristmasEnabled = useStore(christmasEnabled);
   const isBgmPanelOpen = useStore($bgmPanelOpen);
 
-  // SỬ DỤNG STORE HOOKS CHO 2 TÍNH NĂNG MỚI
-  const isMounted = useIsMounted();
-  const isReading = useStore($isReading);
-  const isAutoRepeat = useStore($isAutoRepeat);
-
-  // State kiểm tra xem trang hiện tại có bài viết để đọc hay không
-  const [hasPostContent, setHasPostContent] = useState(false);
-
+  // Initialize christmas state on mount
   useEffect(() => {
     initChristmasState();
-
-    // Kiểm tra xem trang hiện tại có bài viết Markdown (article hoặc .content) hay không
-    const checkContent = () => {
-      const hasContent = !!(document.querySelector('article') || document.querySelector('.content'));
-      setHasPostContent(hasContent);
-    };
-
-    checkContent();
-
-    // Hỗ trợ cập nhật lại khi Astro chuyển trang tĩnh
-    document.addEventListener('astro:page-load', checkContent);
-    return () => document.removeEventListener('astro:page-load', checkContent);
   }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -98,8 +77,6 @@ export default function FloatingGroup() {
 
   // Hide when drawer is open
   const isHidden = isDrawerOpen;
-
-  if (!isMounted) return null;
 
   return (
     <motion.div
@@ -120,38 +97,6 @@ export default function FloatingGroup() {
             exit={{ y: 50, opacity: 0 }}
             transition={{ duration: 0.15, ease: 'easeInOut' }}
           >
-            {/* NÚT 1: ĐỌC BÀI VIẾT (Chỉ hiển thị khi có nội dung bài viết) */}
-            {hasPostContent && readPostConfig && (
-              <FloatingButton
-                onClick={toggleReading}
-                ariaLabel={isReading ? t('floating.stopReadingPost') : t('floating.readPost')}
-                title={isReading ? t('floating.stopReadingPost') : t('floating.readPost')}
-                className={
-                  isReading
-                    ? 'border-indigo-200 bg-indigo-50/50 text-indigo-600 dark:border-indigo-900/50 dark:bg-indigo-950/30 dark:text-indigo-400'
-                    : ''
-                }
-              >
-                <Icon icon={isReading ? 'ri:text-to-speech-fill' : 'ri:text-to-speech-line'} className="h-5 w-5" />
-              </FloatingButton>
-            )}
-
-            {/* NÚT 2: TỰ ĐỘNG ĐỌC LẠI (Chỉ hiển thị khi có nội dung bài viết) */}
-            {hasPostContent && autoRepeatConfig && (
-              <FloatingButton
-                onClick={toggleAutoRepeat}
-                ariaLabel={t('floating.autoRepeat')}
-                title={isAutoRepeat ? t('floating.stopAutoRepeat') : t('floating.autoRepeat')}
-                className={
-                  isAutoRepeat
-                    ? 'border-emerald-200 bg-emerald-50/50 text-emerald-600 dark:border-emerald-900/50 dark:bg-emerald-950/30 dark:text-emerald-400'
-                    : ''
-                }
-              >
-                <Icon icon={isAutoRepeat ? 'ri:repeat-2-fill' : 'ri:repeat-2-line'} className="h-5 w-5" />
-              </FloatingButton>
-            )}
-
             {christmasConfig.enabled && (
               <FloatingButton onClick={toggleChristmas} ariaLabel={t('floating.christmas')} title={t('floating.christmas')}>
                 <Icon icon={isChristmasEnabled ? 'ri:snowy-fill' : 'ri:snowy-line'} className="h-5 w-5" />

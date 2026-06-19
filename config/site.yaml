@@ -716,3 +716,9 @@ map:
   title: Bản đồ
   description: Bản Đồ Truyền Đăng Thiền Tông - Địa Danh Thực Tế
 # =============================================================================
+# Read the current Post & Auto Repeat feature
+# =============================================================================
+readPost:
+  enabled: true
+autoRepeat:
+  enabled: true
