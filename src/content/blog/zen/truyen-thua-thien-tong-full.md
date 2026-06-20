@@ -11,6 +11,8 @@ tags:
 authors:
   - tosuthien.org
 image: /images/koans/great-wave.webp
+audioSource: "youtube" 
+audioId: "RG5e4O5gBpU"
 ---
 
 ## SƠ ĐỒ TRUYỀN THỪA

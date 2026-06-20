@@ -26,8 +26,9 @@ import { getOgImageUrl } from '@lib/seo/og-image';
 import { Icon } from 'astro-icon/components';
 import { Comment } from '@/components/comment';
 import EditButton from '@/components/EditButton';
+import AudioEmbed from '@/components/embed/AudioEmbed.astro';
 import { defaultLocale, getLocaleFromUrl, getLocaleLabel, localizedPath, t } from '@/i18n';
-import { extractTextFromMarkdown } from '@/lib/sanitize';
+import { extractTextFromMarkdown } from '@/lib/sanitize'; // 1. IMPORT COMPONENT VÀO ĐẦU FILE
 
 export async function getStaticPaths() {
   const postCollections = await getSortedPosts(defaultLocale);
@@ -203,7 +204,13 @@ if (post.data.description) {
           <SummaryPanel client:visible summary={summaryText} source={summarySource} className="mt-2" />
         )
       }
+      {/* VỊ TRÍ ĐẶT ĐỒNG BỘ: Nằm ngay trên nội dung bài viết và nằm trong khung .prose */}
       <article class="prose md:prose-sm dark:prose-invert" data-pagefind-body>
+
+          {/* Kiểm tra nếu trong file .md bài viết có khai báo audio thì vẽ Player ra */}
+          {post.data?.audioSource && post.data?.audioId && (
+              <AudioEmbed audioSource={post.data?.audioSource} audioId={post.data?.audioId} />
+          )}
         <CustomContent Content={Content} />
       </article>
       <Comment />

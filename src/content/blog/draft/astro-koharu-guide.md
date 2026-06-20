@@ -528,8 +528,8 @@ categories:
 ```markdown
 ---
 layout: ../layouts/PageLayout.astro
-title: "歌单"
-description: "我喜欢的音乐"
+title: "Danh sách phát"
+description: "Tổ sư thiền / Thiền tông"
 coverTitle: "我的歌单"
 comments: false
 ---
@@ -554,7 +554,7 @@ comments: false
 ```yaml
 navigation:
   # ...
-  - name: 歌单
+  - name: Danh sách phát
     path: /music
     icon: ri:music-2-fill
 ```

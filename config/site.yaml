@@ -450,9 +450,9 @@ navigation:
     nameKey: nav.about
     path: /about
     icon: fa6-regular:circle-user
-  - name: 歌单
+  - name: Danh sách phát
     nameKey: nav.music
-    path: /music
+    path: /audio
     icon: ri:music-2-fill
 
 # =============================================================================

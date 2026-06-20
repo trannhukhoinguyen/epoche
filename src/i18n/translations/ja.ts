@@ -15,7 +15,7 @@ export const uiStrings: UIStrings = {
   'nav.archives': 'アーカイブ',
   'nav.ancestors': '祖先',
   'nav.about': 'ブログについて',
-  'nav.music': '音楽',
+  'nav.music': 'プレイリスト',
   'nav.weekly': '週刊',
   'nav.bangumi': 'オタ活の記録',
 

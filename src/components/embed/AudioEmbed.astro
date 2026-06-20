@@ -1,0 +1,43 @@
+---
+// src/components/AudioEmbed.astro
+interface Props {
+  source?: 'spotify' | 'youtube' | 'rss';
+  id?: string;
+  frontmatter?: {
+    audioSource?: 'spotify' | 'youtube' | 'rss';
+    audioId?: string;
+  };
+  // Bổ sung thêm option nhận dữ liệu trực tiếp từ post.data
+  audioSource?: 'spotify' | 'youtube' | 'rss';
+  audioId?: string;
+}
+
+const { frontmatter, source: directSource, id: directId, audioSource, audioId } = Astro.props;
+
+// Kiểm tra mọi trường hợp nguồn dữ liệu đầu vào
+const source = directSource || audioSource || frontmatter?.audioSource;
+const id = directId || audioId || frontmatter?.audioId;
+---
+
+{source && id && (
+<div class="audio-embed-wrapper shadow-box my-6 w-full overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/50 p-2 dark:border-zinc-800/80 dark:bg-zinc-900/50 backdrop-blur-sm transition-all duration-300 hover:shadow-md">
+    {source === 'spotify' && (
+            <iframe style="border-radius:12px" src={`https://open.spotify.com/embed/track/${id}?utm_source=generator&theme=0`} width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    )}
+
+    {source === 'youtube' && (
+            <iframe class="rounded-xl" width="100%" height="120" src={`https://www.youtube.com/embed/${id}?component=player&listType=playlist&color=white`} title="YouTube audio player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+    )}
+
+    {source === 'rss' && (
+            <iframe title="RSS.com Podcast Player" src={`https://player.rss.com/${id}?theme=light`} width="100%" height="140" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    )}
+</div>
+    )}
+
+<style is:global>
+    .audio-embed-wrapper iframe {
+        display: block;
+        background: transparent;
+    }
+</style>
