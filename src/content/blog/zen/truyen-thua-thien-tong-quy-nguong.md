@@ -10,7 +10,7 @@ tags:
   - Truyền thừa
 authors:
   - tosuthien.org
-image: /images/koans/great-wave.webp
+cover: /img/cover/1.webp
 ---
 
 ## 🌱 Truyền thừa

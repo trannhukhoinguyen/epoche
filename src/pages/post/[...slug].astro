@@ -51,7 +51,16 @@ const canonicalUrl = isFallback
   ? new URL(localizedPath(`/post/${encodeSlug(getPostSlug(post))}`, defaultLocale), Astro.site).href
   : undefined;
 const { Content } = await post.render();
-const { title, categories = [], tags = [], date, math: postMath, keywords: postKeywords = [] } = post?.data ?? {};
+const {
+  title,
+  audioSource,
+  audioId,
+  categories = [],
+  tags = [],
+  date,
+  math: postMath,
+  keywords: postKeywords = [],
+} = post?.data ?? {};
 // KaTeX CSS: only load when global enableMath is on AND post hasn't opted out.
 // When enableMath is false globally, rehype-katex is not in the pipeline, so no math is rendered.
 const hasMath = defaultContentConfig.enableMath !== false && postMath !== false;
@@ -151,7 +160,7 @@ if (post.data.description) {
 ---
 
 <Layout
-  title={`${post.data.title}${categoryStr} | ${siteConfig.title}`}
+  title={`${title}${categoryStr} | ${siteConfig.title}`}
   description={finalDescription}
   siderType={HomeSiderType.POST}
   post={post}
@@ -208,9 +217,11 @@ if (post.data.description) {
       <article class="prose md:prose-sm dark:prose-invert" data-pagefind-body>
 
           {/* Kiểm tra nếu trong file .md bài viết có khai báo audio thì vẽ Player ra */}
-          {post.data?.audioSource && post.data?.audioId && (
-              <AudioEmbed audioSource={post.data?.audioSource} audioId={post.data?.audioId} />
+          {audioSource && audioId && (
+              <AudioEmbed audioSource={audioSource ?? 'rss'} audioId={audioId} />
           )}
+        audioSource: {audioSource}
+        audioId: {audioId}
         <CustomContent Content={Content} />
       </article>
       <Comment />

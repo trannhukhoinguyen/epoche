@@ -12,10 +12,10 @@
 # =============================================================================
 site:
   title: Tổ Sư Thiền # Tên trang web
-  alternate: Thiền Tổ Sư # Tên tiếng Anh của trang web (dùng cho chân trang, logo, tên người dùng @, v.v.)
+  alternate: Patriarchal Zen # Tên tiếng Anh của trang web (dùng cho chân trang, logo, tên người dùng @, v.v.)
   subtitle: Khi chưa có trời đất ta là cái gì # Phụ đề trang web
-  name: tosuthien.org # Tên tác giả - Vui lòng thay đổi thành tên của bạn
-  description: Một giao diện blog hiện đại dựa trên Astro # Mô tả trang web
+  name: Tổ Sư Thiền # Tên tác giả - Vui lòng thay đổi thành tên của bạn
+  description: Phương pháp tham thiền từ Phật Thích Ca truyền qua nhiều đời Tổ Sư # Mô tả trang web
   avatar: /img/avatar.webp # Ảnh đại diện trang web
   showLogo: true # Có hiển thị logo hay không
   author: tosuthien.org # Tên tác giả - Vui lòng thay đổi thành tên của bạn
