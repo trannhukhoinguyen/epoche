@@ -22,36 +22,36 @@ data
   nodes
     - label Nhãn thức
       id eye
-      desc LĂNG KÍNH MẮT
-      icon tabler/eye
+      desc Lăng kính MẮT
+      icon mdi/database-eye
     - label Nhĩ thức
       id ear
-      desc LĂNG KÍNH TAI
-      icon tabler/ear
+      desc Lăng kính TAI
+      icon tabler/earphone-bluetooth
     - label Tỷ thức
       id nose
-      desc LĂNG KÍNH MŨI
-      icon tabler/nose
+      desc Lăng kính MŨI
+      icon mdi/smell
     - label Thiệt thức
       id tongue
-      desc LĂNG KÍNH LƯỠI
+      desc Lăng kính LƯỠI
       icon tabler/tongue
     - label Thân thức
       id body
-      desc LĂNG KÍNH THÂN
+      desc Lăng kính THÂN
       icon tabler/body
     - label Ý thức
       id thought
       desc QUYẾT ĐỊNH
-      icon tabler/thought
+      icon tabler/brain
     - label Mạt-na thức
       id self-acceptance
       desc CHẤP NGÃ
-      icon tabler/self
+      icon tabler/body-scan
     - label A-lại-da thức
       id consciousness-sea
       desc BIỂN THỨC NHÓM CHỨA
-      icon tabler/sea
+      icon tabler/ai-agent
   relations
     eye -> thought
     ear -> thought
