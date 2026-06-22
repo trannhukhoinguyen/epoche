@@ -15,6 +15,58 @@ cover: /img/cover/4.webp
 ## SƠ ĐỒ
 
 ```infographic
+infographic relation-dagre-flow-lr-animated-capsule
+data
+  title 内容发布审核流程
+  desc 创作者提交内容到发布上线的标准链路（含驳回回路）
+  nodes
+    - label Nhãn thức
+      id eye
+      desc LĂNG KÍNH MẮT
+      icon tabler/eye
+    - label Nhĩ thức
+      id ear
+      desc LĂNG KÍNH TAI
+      icon tabler/ear
+    - label Tỷ thức
+      id nose
+      desc LĂNG KÍNH MŨI
+      icon tabler/nose
+    - label Thiệt thức
+      id tongue
+      desc LĂNG KÍNH LƯỠI
+      icon tabler/tongue
+    - label Thân thức
+      id body
+      desc LĂNG KÍNH THÂN
+      icon tabler/body
+    - label Ý thức
+      id thought
+      desc QUYẾT ĐỊNH
+      icon tabler/thought
+    - label Mạt-na thức
+      id self-acceptance
+      desc CHẤP NGÃ
+      icon tabler/self
+    - label A-lại-da thức
+      id consciousness-sea
+      desc BIỂN THỨC NHÓM CHỨA
+      icon tabler/sea
+  relations
+    eye -> thought
+    ear -> thought
+    nose -> thought
+    tongue -> thought
+    body -> thought
+    thought -> self-acceptance
+    self-acceptance -> consciousness-sea
+    consciousness-sea -> self-acceptance
+    self-acceptance -> thought
+theme light
+  palette antv
+```
+
+```infographic
 infographic sequence-filter-mesh-simple
 data
   title 企业优势列表

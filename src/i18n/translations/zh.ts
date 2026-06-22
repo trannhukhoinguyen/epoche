@@ -14,7 +14,9 @@ export const uiStrings = {
   'nav.archives': '归档',
   'nav.ancestors': '祖先',
   'nav.about': '关于',
-  'nav.music': '歌单',
+  'nav.audio': '音频',
+  'nav.video': '视频',
+  'nav.chart': '图表',
   'nav.weekly': '周刊',
   'nav.bangumi': '追番',
 

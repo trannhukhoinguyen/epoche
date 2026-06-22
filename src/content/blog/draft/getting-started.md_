@@ -9,6 +9,7 @@ tags:
 categories:
   - draft
 sticky: true
+draft: true
 ---
 
 欢迎使用 astro-koharu 博客主题！

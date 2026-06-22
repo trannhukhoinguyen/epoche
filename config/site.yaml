@@ -24,10 +24,12 @@ site:
   startYear: 2026 # Năm trang web được tạo
   timezone: Asia/Hanoi # Cấu hình múi giờ (định dạng IANA), được sử dụng để hiển thị và xử lý ngày tháng
   keywords: # Từ khóa SEO (Toàn cầu)
-    - 博客
-    - Astro
-    - 技术
-    - 前端
+    - tổ sư thiền
+    - tổ sư
+    - thiền
+    - zen
+    - patriarch
+    - patriarch zen
     # 请根据你的网站内容添加关键词
   # breadcrumbHome: 首页  # 面包屑导航中首页的显示名称（默认: '首页'）
   # icp:                         # ICP 备案号（可自定义链接）
@@ -68,11 +70,12 @@ i18n:
 # =============================================================================
 categoryMap:
   # Primary categories
-  族长: patriarch
-  禅宗: zen
-  草稿: draft
-  周刊: weekly
-  # Secondary categories (for nested paths)
+  tổ sư: patriarch
+  thiền: zen
+  nháp: draft
+  hàng tuần: weekly
+  duy thức học: vijnanavada
+  # SECONDARY categories (for nested paths)
   # down_category: Down Category
   # Add more as needed:
   # 书摘: reading
@@ -102,6 +105,10 @@ featuredCategories:
   - link: draft # 嵌套分类：笔记/前端
     label: 草稿
     image: /img/cover/1.webp
+    description: 草稿
+  - link: vijnanavada # 嵌套分类：笔记/前端
+    label: Duy thức học
+    image: /img/cover/5.webp
     description: 草稿
   # - link: up_category/down_category # 对应 categoryMap 中 工具: tools
   #   label: 工具
@@ -138,7 +145,10 @@ featuredSeries:
     enabled: true # 启用此系列
     icon: ri:newspaper-line # 导航图标
     links: # 相关链接（可选）
-      github: https://github.com/your-username/your-repo # (可选) GitHub 仓库
+      youtube1: https://www.youtube.com/@t%E1%BB%95s%C6%B0thi%E1%BB%81n/playlists # 替换为你的 youtube VVH 链接
+      youtube2: https://www.youtube.com/@Tham.ToSuThien/playlists # 替换为你的 youtube TTST 链接
+      youtube3: https://www.youtube.com/@tosuthien_org/playlists # 替换为你的 youtube 链接
+      github: https://github.com/trannhukhoinguyen/epoche # (可选) GitHub 仓库
       rss: /rss.xml # (可选) RSS 订阅链接
       # chrome: https://chromewebstore.google.com/detail/your-extension-id # (可选) 浏览器插件
       # docs: https://your-docs-url # (可选) 文档链接
@@ -165,14 +175,18 @@ featuredSeries:
 # 添加新平台：复制现有配置块，修改键名和各字段值即可
 # -----------------------------------------------------------------------------
 social:
-  github:
-    url: https://github.com/trannhukhoinguyen # 替换为你的 GitHub 链接
-    icon: ri:github-fill # Remix Icon 的 GitHub 图标
-    color: '#191717' # (可选) 图标颜色
-  email:
-    url: mailto:tosuthien.org@gmail.com # 替换为你的邮箱，需加 mailto: 前缀
-    icon: ri:mail-line
-    color: '#55acd5'
+  youtube1:
+    url: https://www.youtube.com/@t%E1%BB%95s%C6%B0thi%E1%BB%81n/playlists # 替换为你的 youtube VVH 链接
+    icon: ri:youtube-line # Remix Icon 的 youtube 图标
+    color: '#f00' # (可选) 图标颜色
+  youtube2:
+    url: https://www.youtube.com/@Tham.ToSuThien/playlists # 替换为你的 youtube TTST 链接
+    icon: ri:youtube-line # Remix Icon 的 youtube 图标
+    color: '#f00' # (可选) 图标颜色
+  youtube3:
+    url: https://www.youtube.com/@tosuthien_org/playlists # 替换为你的 youtube 链接
+    icon: ri:youtube-line # Remix Icon 的 youtube 图标
+    color: '#f00' # (可选) 图标颜色
   rss:
     url: /rss.xml # 站内 RSS 订阅地址
     icon: ri:rss-line
@@ -230,10 +244,10 @@ friends:
         color: "#ffc0cb" # 主题色（可选）
   data: # 友链列表
     - site: 余弦の博客
-      url: https://blog.cosine.ren
+      url: https://tosuthien.org
       owner: cos
       desc: FE / ACG / 手工 / 深色模式强迫症 / INFP / 兴趣广泛养两只猫的老宅女 / remote
-      image: https://blog.cosine.ren/img/avatar.webp
+      image: https://tosuthien.org/img/avatar.webp
       color: '#ed788b'
     - site: 示例博客 A
       url: https://example-a.com
@@ -450,10 +464,18 @@ navigation:
     nameKey: nav.about
     path: /about
     icon: fa6-regular:circle-user
-  - name: Danh sách phát
-    nameKey: nav.music
+  - name: Audios
+    nameKey: nav.audio
     path: /audio
     icon: ri:music-2-fill
+  - name: Videos
+    nameKey: nav.video
+    path: /video
+    icon: ri:video-fill
+  - name: Charts
+    nameKey: nav.chart
+    path: /chart
+    icon: ri:bubble-chart-fill
 
 # =============================================================================
 # Christmas/Seasonal Features

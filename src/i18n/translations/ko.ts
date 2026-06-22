@@ -15,7 +15,9 @@ export const uiStrings: UIStrings = {
   'nav.archives': 'Archives',
   'nav.ancestors': 'Ancestors',
   'nav.about': 'About',
-  'nav.music': '재생 목록',
+  'nav.audio': '오디오',
+  'nav.video': '비디오',
+  'nav.chart': '차트',
   'nav.weekly': 'Weekly',
   'nav.bangumi': 'Bangumi',
 
