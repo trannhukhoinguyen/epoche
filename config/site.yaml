@@ -70,11 +70,26 @@ i18n:
 # =============================================================================
 categoryMap:
   # Primary categories
+  hiện tượng: symptom
+  hỏi đáp: faq
+  phim: film
+  địa điểm: place
+  chùa: pagoda
+  Bồ tát: bodhisattva
+  Phật: buddha
+  vua: king
+  cư sĩ: layman
+  giảng giải: interpretation
+  quán chay: veg-eatery
+  ảnh: gallery
+  kinh: sutra
+  thực hành: practice
   tổ sư: patriarch
   thiền: zen
   nháp: draft
   hàng tuần: weekly
   duy thức học: vijnanavada
+
   # SECONDARY categories (for nested paths)
   # down_category: Down Category
   # Add more as needed:
@@ -94,22 +109,70 @@ categoryMap:
 #   description: 分类描述文字，显示在卡片上
 # -----------------------------------------------------------------------------
 featuredCategories:
-  - link: patriarch # 对应 categoryMap 中 族长: patriarch
-    label: 族长
+  - link: faq
+    label: Hỏi đáp
+    image: /img/cover/16.webp
+    description: Hỏi đáp
+  - link: symptom
+    label: Hiện tượng
+    image: /img/cover/15.webp
+    description: Hiện tượng
+  - link: film
+    label: Phim
+    image: /img/cover/14.webp
+    description: Phim
+  - link: bodhisattva
+    label: Bồ tát
+    image: /img/cover/13.webp
+    description: Bồ tát
+  - link: buddha
+    label: Phật
+    image: /img/cover/12.webp
+    description: Phật
+  - link: king
+    label: Vua
+    image: /img/cover/11.webp
+    description: Vua
+  - link: layman
+    label: Cư sĩ
+    image: /img/cover/10.webp
+    description: Cư sĩ
+  - link: interpretation
+    label: Giảng giải
+    image: /img/cover/9.webp
+    description: Giảng giải
+  - link: veg-eatery
+    label: Quán chay
+    image: /img/cover/8.webp
+    description: Quán chay
+  - link: gallery
+    label: Ảnh
+    image: /img/cover/7.webp
+    description: Ảnh
+  - link: sutra
+    label: Kinh
+    image: /img/cover/6.webp
+    description: Kinh
+  - link: practice
+    label: Thực hành
+    image: /img/cover/3.webp
+    description: Thực hành
+  - link: patriarch
+    label: Tổ sư
     image: /img/cover/2.webp
-    description: 族长
-  - link: zen # 对应 categoryMap 中 禅宗: zen
-    label: 禅宗
+    description: Tổ sư
+  - link: zen
+    label: Thiền
     image: /img/cover/4.webp
-    description: 禅宗
-  - link: draft # 嵌套分类：笔记/前端
-    label: 草稿
+    description: Thiền
+  - link: draft
+    label: Nháp
     image: /img/cover/1.webp
-    description: 草稿
-  - link: vijnanavada # 嵌套分类：笔记/前端
+    description: Nháp
+  - link: vijnanavada
     label: Duy thức học
     image: /img/cover/5.webp
-    description: 草稿
+    description: Duy thức học
   # - link: up_category/down_category # 对应 categoryMap 中 工具: tools
   #   label: 工具
   #   image: /img/cover/11.webp
@@ -120,7 +183,7 @@ featuredCategories:
 # 精选系列功能 - 用于展示定期更新的系列内容（支持多个系列）
 # =============================================================================
 # 字段说明：
-#   slug: URL 路径（必填），如 'weekly' 对应 /weekly 路径
+#   slug: URL 路径（必填），如 '' 对应 / 路径
 #         注意：不能与保留路由冲突，包括：about, categories, tags, ancestors, friends, posts, archives, api, _astro, rss.xml, sitemap.xml, robots.txt, favicon.ico 等
 #   categoryName: 对应的分类名称（必填，需在 categoryMap 中存在）
 #   label: 侧边栏/导航中显示的简短名称（可选）

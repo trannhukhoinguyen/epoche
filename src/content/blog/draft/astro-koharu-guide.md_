@@ -311,7 +311,7 @@ categoryMap:
 
 这样，"随笔" 分类的 URL 会是 `/categories/life`，而不是 `/categories/随笔`。
 
-> **注意**：`categoryMap` 仅用于分类页面（`/categories/*`）的 URL 映射。系列页面的 URL（如 `/weekly`、`/reading`）由 `featuredSeries` 中的 `slug` 字段单独配置。
+> **注意**：`categoryMap` 仅用于分类页面（`/categories/*`）的 URL 映射。系列页面的 URL由 `featuredSeries` 中的 `slug` 字段单独配置。
 
 ## 文章系统
 
@@ -679,7 +679,7 @@ tocNumbering: false # 关闭目录编号（默认为 true）
 
 **专属系列页面** (`/{slug}`)：
 
-- 每个启用的系列都有独立页面（如 `/weekly`、`/reading`）
+- 每个启用的系列都有独立页面
 - 显示该系列的所有文章
 - 系列头图和介绍
 - 相关链接（GitHub, RSS 等）
@@ -702,7 +702,7 @@ tocNumbering: false # 关闭目录编号（默认为 true）
 >
 > - 系列文章从首页主列表排除
 > - 设置 `highlightOnHome: true` 时，最新一篇在首页顶部高亮
-> - 其余文章通过系列专属页面（如 `/weekly`）访问
+> - 其余文章通过系列专属页面）访问
 >
 > **其他页面正常展示**：系列文章在归档、分类、标签、搜索等页面仍与普通文章一起显示，仅首页主列表做了分离。
 
@@ -2009,8 +2009,8 @@ en:
     tools: Tools
   series:
     weekly:
-      label: My Weekly
-      fullName: My Tech Weekly
+      label: My
+      fullName: My Tech
   featuredCategories:
     life:
       label: Life

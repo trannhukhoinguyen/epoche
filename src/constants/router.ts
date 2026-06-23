@@ -43,8 +43,8 @@ export const RESERVED_ROUTES = new Set([
 
 /**
  * Get the URL path for a featured series
- * @param slug - The series slug (e.g., 'weekly')
- * @returns The full path (e.g., '/weekly')
+ * @param slug - The series slug
+ * @returns The full path
  */
 export function getSeriesPath(slug: string): string {
   return `/${slug}`;

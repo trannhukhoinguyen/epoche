@@ -53,7 +53,7 @@ export interface FeaturedSeriesLinks {
  * Single featured series configuration
  */
 export interface FeaturedSeriesItem {
-  /** URL path for this series (e.g., 'weekly' → /weekly) */
+  /** URL path for this series  */
   slug: string;
   /** Category name this series is based on */
   categoryName: string;
