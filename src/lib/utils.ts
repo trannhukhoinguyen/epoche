@@ -23,9 +23,9 @@ export function formatCompactNumber(num: number): string {
 
 /**
  * Extract the base slug from a navigation path
- * @param path - Navigation path (e.g., '/weekly', '/reading?page=1')
+ * @param path - Navigation path (e.g., '/', '/reading?page=1')
  * @returns Normalized slug or null if invalid
- * @example normalizeNavSlug('/weekly') => 'weekly'
+ * @example normalizeNavSlug('/') => ''
  * @example normalizeNavSlug('/posts/1') => null (has nested path)
  */
 export function normalizeNavSlug(path: string): string | null {

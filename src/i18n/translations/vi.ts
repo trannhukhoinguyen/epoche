@@ -15,7 +15,9 @@ export const uiStrings: UIStrings = {
   'nav.archives': 'Lưu trữ',
   'nav.ancestors': 'Tổ sư',
   'nav.about': 'Tiểu sử',
-  'nav.music': 'Âm thanh',
+  'nav.audio': 'Audio',
+  'nav.video': 'Video',
+  'nav.chart': 'Sơ đồ',
   'nav.weekly': 'Hàng tuần',
   'nav.bangumi': 'Tiến trình',
 

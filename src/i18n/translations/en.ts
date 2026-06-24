@@ -15,7 +15,9 @@ export const uiStrings: UIStrings = {
   'nav.archives': 'Archives',
   'nav.ancestors': 'Ancestors',
   'nav.about': 'About',
-  'nav.music': 'Music',
+  'nav.audio': 'Audio',
+  'nav.video': 'Video',
+  'nav.chart': 'Chart',
   'nav.weekly': 'Weekly',
   'nav.bangumi': 'Bangumi',
 

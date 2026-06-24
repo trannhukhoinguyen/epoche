@@ -10,7 +10,9 @@ tags:
   - Truyền thừa
 authors:
   - tosuthien.org
-image: /images/koans/great-wave.webp
+cover: /img/cover/1.webp
+audioSource: "youtube" 
+audioId: "RG5e4O5gBpU"
 ---
 
 ## SƠ ĐỒ TRUYỀN THỪA

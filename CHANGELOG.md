@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file. See [conven
 ## [2.2.0](https://github.com/cosZone/astro-koharu/compare/v2.1.0..v2.2.0) - 2026-01-17
 
 - v2.2.0 by @yusixian in https://github.com/cosZone/astro-koharu/pull/47
-- Feat/weekly slug by @yusixian in https://github.com/cosZone/astro-koharu/pull/46
+- Feat/ slug by @yusixian in https://github.com/cosZone/astro-koharu/pull/46
 - Feat/comment slug by @yusixian in https://github.com/cosZone/astro-koharu/pull/45
 
 新加了自定义其他系列文章的功能，现在可以简单新增以下如图所示的系列文章了，还是以分类功能为基础。
@@ -173,7 +173,7 @@ All notable changes to this project will be documented in this file. See [conven
 - scroll-state build error - ([6b469bd](https://github.com/cosZone/astro-koharu/commit/6b469bda6a5d07cc72deb3a6c5b3aaacee67ae2f)) - yusixian
 - update text color on hover in DropdownNav component - ([ea97959](https://github.com/cosZone/astro-koharu/commit/ea979599b0dc6e969c5e906074e67361b4f310b5)) - yusixian
 - add post to MobileDrawer and Layout components and enhance pagefind css - ([4ca8a44](https://github.com/cosZone/astro-koharu/commit/4ca8a448e8bea2c1c387d94f01b6e2ac3dc83db9)) - yusixian
-- adjust alignment in WeeklyCover - ([155da1a](https://github.com/cosZone/astro-koharu/commit/155da1a34a33bb9e079bc117f8f272e137ac23ff)) - yusixian
+- adjust alignment in  - ([155da1a](https://github.com/cosZone/astro-koharu/commit/155da1a34a33bb9e079bc117f8f272e137ac23ff)) - yusixian
 - remove unnecessary border - ([2d0f9ca](https://github.com/cosZone/astro-koharu/commit/2d0f9caf7ed456453926d56adc33d68b465eaa79)) - yusixian
 - adjust positioning of info more - ([c814e71](https://github.com/cosZone/astro-koharu/commit/c814e71a145c5e808ebce025d2426c69a0daee76)) - yusixian
 - quaily - ([34b672c](https://github.com/cosZone/astro-koharu/commit/34b672c579165708bf9281f08a7ceb74883d8b4a)) - yusixian
@@ -241,7 +241,7 @@ All notable changes to this project will be documented in this file. See [conven
 - integrate pagefind for enhanced search functionality and add search dialog component - ([e637a67](https://github.com/cosZone/astro-koharu/commit/e637a67ad0f1b1f930362141ac587f3baa38fdca)) - yusixian
 - add new avatar image and update site description - ([8d96dd7](https://github.com/cosZone/astro-koharu/commit/8d96dd7320181e9cda4823342baf86e6c04a9ca9)) - yusixian
 - integrate FloatingPortal into Popover - ([68de6d4](https://github.com/cosZone/astro-koharu/commit/68de6d4912958d9c7979cf44f92bbd703fe8e7a0)) - yusixian
-- add weekly & replace markdown-it & update ui - ([a2c12dd](https://github.com/cosZone/astro-koharu/commit/a2c12dd320fbbc50f5f998d76077a2fac2f144f6)) - yusixian
+- add replace markdown-it & update ui - ([a2c12dd](https://github.com/cosZone/astro-koharu/commit/a2c12dd320fbbc50f5f998d76077a2fac2f144f6)) - yusixian
 - add new cover images & update layout - ([04f87c4](https://github.com/cosZone/astro-koharu/commit/04f87c49df7b0f0a70d73ed622e05e141aa9a1fe)) - yusixian
 - update font config & footer - ([2331edc](https://github.com/cosZone/astro-koharu/commit/2331edc72bded7d69557fd4c5205999756ad4225)) - yusixian
 - add ScrollProgress - ([5b12502](https://github.com/cosZone/astro-koharu/commit/5b12502146a3b4a9b2a5fef0f11b98817e2c8735)) - yusixian

@@ -20,8 +20,8 @@ vi:
 
   series:
     weekly:
-      label: Practise Weekly
-      fullName: Practise Zen Weekly
+      label: Practise
+      fullName: Practise Zen
 
   featuredCategories:
     patriarch:
@@ -41,8 +41,8 @@ zh:
 
   series:
     weekly:
-      label: Practise Weekly
-      fullName: Practise Zen Weekly
+      label: Practise
+      fullName: Practise Zen
 
   featuredCategories:
     patriarch:
@@ -61,8 +61,8 @@ en:
 
   series:
     weekly:
-      label: Practise Weekly
-      fullName: Practise Zen Weekly
+      label: Practise
+      fullName: Practise Zen
 
   featuredCategories:
     patriarch:
@@ -81,8 +81,8 @@ ja:
 
   series:
     weekly:
-      label: Practise Weekly
-      fullName: Practise Zen Weekly
+      label: Practise
+      fullName: Practise Zen
 
   featuredCategories:
     patriarch:
