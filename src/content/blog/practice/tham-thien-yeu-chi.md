@@ -1,8 +1,11 @@
 ---
 title: "THAM THIỀN YẾU CHỈ"
-description: "THAM THIỀN YẾU CHỈ - Phương pháp tham thiền"
-excerpt: "Phương pháp tham thiền"
-showInHomepage: true
+meta_title: "THAM THIỀN YẾU CHỈ - Phương pháp tham thiền"
+link: tham-thien-yeu-chi
+date: 2026-06-23 08:00:00
+description: ""
+authors:
+  - TS HƯ VÂN DIỄN TRIỆT
 categories:
   - Thực hành
   - Ngữ lục
@@ -11,14 +14,62 @@ tags:
   - THAM THIỀN
   - TS ĐỨC THANH DIỄN TRIỆT
   - TS HƯ VÂN DIỄN TRIỆT
-image: /images/koans/great-wave.webp
-authors: 
-  - "Thiền Sư HƯ VÂN"
-pdfUrls: 
-  - /pdfs/practices/phuong-phap-tham-thien.pdf
-  - /pdfs/practices/tham-thien-yeu-chi.pdf
-videoId: yJRqjjX2WIQ
+cover: /img/cover/13.webp
 ---
+
+## SƠ ĐỒ
+
+```infographic
+infographic relation-dagre-flow-lr-animated-capsule
+data
+  title 内容发布审核流程
+  desc 创作者提交内容到发布上线的标准链路（含驳回回路）
+  nodes
+    - label Nhãn thức
+      id eye
+      desc Lăng kính MẮT
+      icon mdi/database-eye
+    - label Nhĩ thức
+      id ear
+      desc Lăng kính TAI
+      icon tabler/earphone-bluetooth
+    - label Tỷ thức
+      id nose
+      desc Lăng kính MŨI
+      icon mdi/smell
+    - label Thiệt thức
+      id tongue
+      desc Lăng kính LƯỠI
+      icon tabler/tongue
+    - label Thân thức
+      id body
+      desc Lăng kính THÂN
+      icon tabler/body
+    - label Ý thức
+      id thought
+      desc QUYẾT ĐỊNH
+      icon tabler/brain
+    - label Mạt-na thức
+      id self-acceptance
+      desc CHẤP NGÃ
+      icon tabler/body-scan
+    - label A-lại-da thức
+      id consciousness-sea
+      desc BIỂN THỨC NHÓM CHỨA
+      icon tabler/ai-agent
+  relations
+    eye -> thought
+    ear -> thought
+    nose -> thought
+    tongue -> thought
+    body -> thought
+    thought -> self-acceptance
+    self-acceptance -> consciousness-sea
+    consciousness-sea -> self-acceptance
+    self-acceptance -> thought
+theme light
+  palette antv
+```
 
 ## ĐIỀU KIỆN QUYẾT ĐỊNH ĐẦU TIÊN CỦA SỰ THAM THIỀN
 

@@ -1,14 +1,14 @@
 ---
 // src/components/AudioEmbed.astro
 interface Props {
-  source?: 'spotify' | 'youtube' | 'rss';
+  source?: 'spotify' | 'youtube' | 'rss' | 'link';
   id?: string;
   frontmatter?: {
-    audioSource?: 'spotify' | 'youtube' | 'rss';
+    audioSource?: 'spotify' | 'youtube' | 'rss' | 'link';
     audioId?: string;
   };
   // Bổ sung thêm option nhận dữ liệu trực tiếp từ post.data
-  audioSource?: 'spotify' | 'youtube' | 'rss';
+  audioSource?: 'spotify' | 'youtube' | 'rss' | 'link';
   audioId?: string;
 }
 
@@ -29,12 +29,12 @@ const id = directId || audioId || frontmatter?.audioId;
             <iframe class="rounded-xl" width="100%" height="120" src={`https://www.youtube.com/embed/${id}?component=player&listType=playlist&color=white`} title="YouTube audio player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
     )}
 
-<!--    {source === 'rss' && (
-            <iframe title="RSS.com Podcast Player" src={`https://player.rss.com/${id}?theme=light`} width="100%" height="140" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-    )}-->
-
     {source === 'rss' && (
             <iframe title="RSS.com Podcast Player" src={`https://player.rss.com/${id}?theme=light`} width="100%" height="140" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    )}
+
+    {source === 'link' && (
+            <iframe title="Player" src={`https://player.rss.com/${id}?theme=light`} width="100%" height="140" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     )}
 </div>
     )}

@@ -218,10 +218,8 @@ if (post.data.description) {
 
           {/* Kiểm tra nếu trong file .md bài viết có khai báo audio thì vẽ Player ra */}
           {audioSource && audioId && (
-              <AudioEmbed audioSource={audioSource ?? 'rss'} audioId={audioId} />
+              <AudioEmbed audioSource={audioSource} audioId={audioId} />
           )}
-        audioSource: {audioSource}
-        audioId: {audioId}
         <CustomContent Content={Content} />
       </article>
       <Comment />

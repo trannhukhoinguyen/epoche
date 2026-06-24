@@ -1,20 +1,73 @@
 ---
 title: "THÔ TÂM DỤNG & MIÊN MẬT DỤNG"
+meta_title: "THÔ TÂM DỤNG & MIÊN MẬT DỤNG"
+link: tho-tam-dung-va-mien-mat-dung
+date: 2026-06-23 08:00:00
 description: ""
-excerpt: "Như gói nhiều đậu nành trong bao, dù để ở đâu, bên trong ắt cũng lỏng lẻo, hễ mở bao ra thì đổ vãi đầy đất...."
-showInHomepage: true
+authors:
+  - TS LAI QUẢ
 categories:
   - Thực hành
   - Ngữ lục
 tags:
   - THAM THIỀN PHỔ THUYẾT
   - TS LAI QUẢ
-image: /images/koans/great-wave.webp
-authors:
-  - "Thiền Sư Lai Quả"
-videoIds:
-  - 2w4xF8bRWow
+cover: /img/cover/13.webp
 ---
+
+## SƠ ĐỒ
+
+```infographic
+infographic relation-dagre-flow-lr-animated-capsule
+data
+  title 内容发布审核流程
+  desc 创作者提交内容到发布上线的标准链路（含驳回回路）
+  nodes
+    - label Nhãn thức
+      id eye
+      desc Lăng kính MẮT
+      icon mdi/database-eye
+    - label Nhĩ thức
+      id ear
+      desc Lăng kính TAI
+      icon tabler/earphone-bluetooth
+    - label Tỷ thức
+      id nose
+      desc Lăng kính MŨI
+      icon mdi/smell
+    - label Thiệt thức
+      id tongue
+      desc Lăng kính LƯỠI
+      icon tabler/tongue
+    - label Thân thức
+      id body
+      desc Lăng kính THÂN
+      icon tabler/body
+    - label Ý thức
+      id thought
+      desc QUYẾT ĐỊNH
+      icon tabler/brain
+    - label Mạt-na thức
+      id self-acceptance
+      desc CHẤP NGÃ
+      icon tabler/body-scan
+    - label A-lại-da thức
+      id consciousness-sea
+      desc BIỂN THỨC NHÓM CHỨA
+      icon tabler/ai-agent
+  relations
+    eye -> thought
+    ear -> thought
+    nose -> thought
+    tongue -> thought
+    body -> thought
+    thought -> self-acceptance
+    self-acceptance -> consciousness-sea
+    consciousness-sea -> self-acceptance
+    self-acceptance -> thought
+theme light
+  palette antv
+```
 
 ## THÔ TÂM LÀ GÌ?
 
