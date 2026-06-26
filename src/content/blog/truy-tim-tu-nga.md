@@ -1,7 +1,7 @@
 ---
 title: "Truy tìm tự ngã"
 meta_title: "Truy tìm tự ngã"
-link: dan-vao-duy-thuc-hoc
+link: truy-tim-tu-nga
 date: 2026-06-26 21:52:00
 description: ""
 excerpt: ""
