@@ -18,53 +18,35 @@ cover: /img/cover/13.webp
 ## SƠ ĐỒ
 
 ```infographic
-infographic relation-dagre-flow-lr-animated-capsule
+infographic compare-hierarchy-row-letter-card-compact-card
 data
-  title 内容发布审核流程
-  desc 创作者提交内容到发布上线的标准链路（含驳回回路）
-  nodes
-    - label Nhãn thức
-      id eye
-      desc Lăng kính MẮT
-      icon mdi/database-eye
-    - label Nhĩ thức
-      id ear
-      desc Lăng kính TAI
-      icon tabler/earphone-bluetooth
-    - label Tỷ thức
-      id nose
-      desc Lăng kính MŨI
-      icon mdi/smell
-    - label Thiệt thức
-      id tongue
-      desc Lăng kính LƯỠI
-      icon tabler/tongue
-    - label Thân thức
-      id body
-      desc Lăng kính THÂN
-      icon tabler/body
-    - label Ý thức
-      id thought
-      desc QUYẾT ĐỊNH
-      icon tabler/brain
-    - label Mạt-na thức
-      id self-acceptance
-      desc CHẤP NGÃ
-      icon tabler/body-scan
-    - label A-lại-da thức
-      id consciousness-sea
-      desc BIỂN THỨC NHÓM CHỨA
-      icon tabler/ai-agent
-  relations
-    eye -> thought
-    ear -> thought
-    nose -> thought
-    tongue -> thought
-    body -> thought
-    thought -> self-acceptance
-    self-acceptance -> consciousness-sea
-    consciousness-sea -> self-acceptance
-    self-acceptance -> thought
+  title THAM THIỀN PHỔ THUYẾT
+  desc TS LAI QUẢ DIỆU THỌ
+  compares
+    - label THÔ TÂM DỤNG
+      children
+        - label Gói nhiều đậu nành trong bao
+          desc dù để ở đâu, bên trong ắt cũng lỏng lẻo, hễ mở bao ra thì đổ vãi đầy đất
+        - label Thô tâm duyên Cảnh
+          desc tâm cảnh đồng thô, dù thu lại thành một khối, cũng chưa quên các thức
+        - label Hơi có chút Giãi đãi
+          desc thân tâm tán loạn - nghi tình tiêu mất - tâm thiền cũng tan
+        - label Các vọng lăng xăng thu về 1 niệm
+          desc quét sạch hết trần lao, cặn cáu chẳng còn
+        - label Tham thành một khối
+          desc ắt từ bên trong khử vọng, bên ngoài khử trần
+    - label MIÊN MẬT DỤNG
+      children
+        - label Miên như sợi tơ, mật như vải bố
+          desc do một sợi tơ mà thành miên, từ một đường chỉ mà thành mật
+        - label Phiến - Khối
+          desc do một pháp mà thành phiến, từ một niệm mà thành khối
+        - label Đem tơ dệt thành vải bố
+          desc tơ chẳng thông gió tức là xuất thế vô lậu, vải chẳng lọt mưa tức là thế giới vô lậu
+        - label thế gian - xuất thế gian - câu thoại đầu
+          desc đồng một pháp - đồng một tâm
+        - label Con tằm nhả tơ
+          desc bắt đầu từ một sợi cho đến cuối cùng làm thành một kén, khoảng giữa không có gián đoạn
 theme light
   palette antv
 ```
@@ -83,7 +65,9 @@ Tâm có định loạn, thiền có đắc thất, sự gián đoạn đều do
 
 **Thô tâm** là gì? Như gói nhiều **đậu** nành trong bao, dù để ở đâu, bên trong ắt cũng lỏng lẻo, hễ mở bao ra thì đổ vãi đầy đất.
 
-Nếu đem bao **đậu** ngâm nước, **đậu** nẩy **mầm** nở ra thì làm bao bị bể. Dụ như **thô tâm** duyên **cảnh**, **tâm cảnh** đồng **thô**, dù thu lại thành một **khối**, cũng chưa quên các **thức**.
+Nếu đem bao **đậu** ngâm nước, **đậu** nẩy **mầm** nở ra thì làm bao bị bể. 
+
+Dụ như **thô tâm** duyên **cảnh**, **tâm cảnh** đồng **thô**, dù thu lại thành một **khối**, cũng chưa quên các **thức**.
 
 Hơi có chút **giãi đãi** thì thân tâm tán loạn, **nghi tình** tiêu mất, **tâm thiền** cũng tan.
 
@@ -115,11 +99,11 @@ Bằng không, há người chẳng bằng vật ư!
 
 ## NGUỒN
 
-🔗 <a href="https://taidayvabaygio.org/tho-tam-dung-mien-mat-dung-lai-qua-thien-su.html" target="_blank">taidayvabaygio.org</a>
+🔗 <a href="https://taidayvabaygio.org/tho-tam-dung-mien-mat-dung-lai-qua-thien-su.html" target="_blank"> taidayvabaygio.org </a>
 
-🔗 <a href="https://thuvienhoasen.org/a16771/tham-thien-pho-thuyet" target="_blank">thuvienhoasen.org</a>
+🔗 <a href="https://thuvienhoasen.org/a16771/tham-thien-pho-thuyet" target="_blank"> thuvienhoasen.org </a>
 
-> 🎈 Trích - <a href="/books/tham-thien-pho-thuyet" target="_blank">THAM THIỀN PHỔ THUYẾT </a>
+🔗 🎈 Trích <a href="/books/tham-thien-pho-thuyet" target="_blank"> THAM THIỀN PHỔ THUYẾT </a>
 
 <hr class="blog-rule" />
 

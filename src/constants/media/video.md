@@ -5,7 +5,13 @@ description: "Tổ sư thiền / Thiền tông"
 ---
 
 {% media video %}
-  - name: "测试 1"
-    url: /video/video-1m6.mp4
-    author: "1m6";
+  - name: "Trọn Bộ - Thắng Man Giảng Luận"
+    url: https://www.youtube.com/embed/5mu1gVSrxsU?component=player&listType=playlist&color=white
+    author: "Tuệ Sỹ";
+  - name: "Trọn Bộ - Thắng Man Giảng Luận"
+    url: https://www.youtube.com/embed/5mu1gVSrxsU?component=player&listType=playlist&color=white
+    author: "Tuệ Sỹ";
+  - name: "Trọn Bộ - Thắng Man Giảng Luận"
+    url: https://www.youtube.com/embed/5mu1gVSrxsU?component=player&listType=playlist&color=white
+    author: "Tuệ Sỹ";
 {% endmedia %}

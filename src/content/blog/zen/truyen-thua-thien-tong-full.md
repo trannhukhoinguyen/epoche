@@ -18,7 +18,7 @@ audioId: "RG5e4O5gBpU"
 ## SƠ ĐỒ TRUYỀN THỪA
 
 ```infographic
-infographic hierarchy-tree-lr-curved-line-capsule-item
+infographic hierarchy-tree-tech-style-rounded-rect-node
 data
   title 28 vị tổ Ấn Độ
   items
@@ -174,7 +174,7 @@ data
                                                                                                                                         - label Ngọc Tuyền Thần Tú
                                                                                                                                         - label Tung Nhạc Tuệ An
                                                                                                                                         - label Mông Sơn Đạo Minh
-                                                                                                                                        - label Dajian Huineng (tổ 33)
+                                                                                                                                        - label Đại Giám Huệ Năng (tổ 33)
                                                                                                                                           children
                                                                                                                                             - label Tây Ấn Quật Đa Tam Tạng
 ```

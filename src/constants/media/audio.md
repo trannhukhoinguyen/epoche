@@ -5,8 +5,7 @@ description: "Tổ sư thiền / Thiền tông"
 ---
 
 {% media audio %}
-  - title: Audio Local
+  - title: Dẫn vào Duy Thức học
     list:
-      - /audio/Ngài Triệu Châu vì sao nói Không.m4a
-      - /audio/Trung Phong Pháp Ngữ - sinh tử thiết - tâm tha thiết - không bí quyết.mp3
+      - /audio/Dẫn vào Duy Thức học - Thích Tuệ Sỹ.mp3
 {% endmedia %}
