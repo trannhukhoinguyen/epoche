@@ -19,53 +19,35 @@ audioId: "AdqTRVVbjoo"
 ## SƠ ĐỒ
 
 ```infographic
-infographic relation-dagre-flow-lr-animated-capsule
+infographic list-grid-candy-card-lite
 data
-  title 内容发布审核流程
-  desc 创作者提交内容到发布上线的标准链路（含驳回回路）
-  nodes
-    - label Nhãn thức
-      id eye
-      desc Lăng kính MẮT
-      icon mdi/database-eye
-    - label Nhĩ thức
-      id ear
-      desc Lăng kính TAI
-      icon tabler/earphone-bluetooth
-    - label Tỷ thức
-      id nose
-      desc Lăng kính MŨI
-      icon mdi/smell
-    - label Thiệt thức
-      id tongue
-      desc Lăng kính LƯỠI
-      icon tabler/tongue
-    - label Thân thức
-      id body
-      desc Lăng kính THÂN
-      icon tabler/body
-    - label Ý thức
-      id thought
-      desc QUYẾT ĐỊNH
-      icon tabler/brain
-    - label Mạt-na thức
-      id self-acceptance
-      desc CHẤP NGÃ
-      icon tabler/body-scan
-    - label A-lại-da thức
-      id consciousness-sea
-      desc BIỂN THỨC NHÓM CHỨA
-      icon tabler/ai-agent
-  relations
-    eye -> thought
-    ear -> thought
-    nose -> thought
-    tongue -> thought
-    body -> thought
-    thought -> self-acceptance
-    self-acceptance -> consciousness-sea
-    consciousness-sea -> self-acceptance
-    self-acceptance -> thought
+  title 企业优势列表
+  desc 展示企业在不同维度上的核心优势与表现值
+  lists
+    - label 1
+      desc 11
+      icon mingcute/open_door_line
+    - label 2
+      desc 22
+      icon mingcute/open_door_fill
+    - label 3
+      desc 33
+      icon mingcute/open_door_line
+    - label 4
+      desc 44
+      icon mingcute/open_door_fill
+    - label 5
+      desc 55
+      icon mingcute/open_door_line
+    - label 6
+      desc 66
+      icon mingcute/open_door_fill
+    - label 7
+      desc 77
+      icon mingcute/open_door_line
+    - label 8
+      desc 88
+      icon mingcute/open_door_fill
 theme light
   palette antv
 ```
